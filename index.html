@@ -28,6 +28,18 @@
     <title> M.Hasan's Portfolio </title>
 </head>
 
+<audio id="background-music" autoplay loop>
+    <source src="assets/music/music.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    document.addEventListener("click", () => {
+        const music = document.getElementById("background-music");
+        music.play();
+    }, { once: true });
+</script>
+
 <body>
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
