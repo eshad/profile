@@ -28,7 +28,7 @@
     <title> M.Hasan's Portfolio </title>
 </head>
 
-<audio id="background-music" autoplay loop>
+<audio id="background-music" loop>
     <source src="assets/music/music.mp3" type="audio/mp3">
     Your browser does not support the audio element.
 </audio>
@@ -38,13 +38,6 @@
         const music = document.getElementById("background-music");
         music.play();
     }, { once: true });
-
-    // Ensure seamless looping in case of delay
-    const music = document.getElementById("background-music");
-    music.addEventListener("ended", () => {
-        music.currentTime = 0; // Reset playback to start
-        music.play(); // Restart immediately
-    });
 </script>
 
 <body>
