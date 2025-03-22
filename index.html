@@ -38,6 +38,13 @@
         const music = document.getElementById("background-music");
         music.play();
     }, { once: true });
+
+    // Ensure seamless looping in case of delay
+    const music = document.getElementById("background-music");
+    music.addEventListener("ended", () => {
+        music.currentTime = 0; // Reset playback to start
+        music.play(); // Restart immediately
+    });
 </script>
 
 <body>
