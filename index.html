@@ -41,53 +41,51 @@
 
 </script>
 <script>
-  window.onload = function () {
-    // MixItUp filtering
-    var mixer = mixitup('.work__container', {
-      selectors: { target: '.mix' },
-      animation: { duration: 300 }
-    });
-
-    // Active tab logic
-    const filterTabs = document.querySelectorAll('.work__item');
-    filterTabs.forEach(tab => {
-      tab.addEventListener('click', function () {
-        filterTabs.forEach(t => t.classList.remove('active-work'));
-        this.classList.add('active-work');
-      });
-    });
-
-    // Video modal logic
-    const modal = document.getElementById('videoModal');
-    const videoFrame = document.getElementById('videoFrame');
-    const closeBtn = document.querySelector('.video-modal-close');
-
-    if (!modal || !videoFrame || !closeBtn) {
-      console.error('Modal elements not found');
-      return;
+  // MixItUp filtering
+  var mixer = mixitup('.work__container', {
+    selectors: {
+      target: '.mix'
+    },
+    animation: {
+      duration: 300
     }
+  });
 
-    document.querySelectorAll('[data-video]').forEach(button => {
-      button.addEventListener('click', function (e) {
-        e.preventDefault();
-        const videoId = this.dataset.video;
-        videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        modal.style.display = 'flex';
-      });
+  // Active tab logic
+  const filterTabs = document.querySelectorAll('.work__item');
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      filterTabs.forEach(t => t.classList.remove('active-work'));
+      this.classList.add('active-work');
     });
+  });
 
-    closeBtn.addEventListener('click', () => {
+  // Video modal logic
+  const modal = document.getElementById('videoModal');
+  const videoFrame = document.getElementById('videoFrame');
+  const closeBtn = document.querySelector('.video-modal-close');
+
+  // Select all buttons with data-video (both <a> and <button>)
+  document.querySelectorAll('[data-video]').forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault(); // Important for <a> tags
+      const videoId = this.dataset.video;
+      videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    videoFrame.src = ''; // Stop the video
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
       modal.style.display = 'none';
       videoFrame.src = '';
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-        videoFrame.src = '';
-      }
-    });
-  };
+    }
+  });
 </script>
 
 <body>
