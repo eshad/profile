@@ -620,56 +620,18 @@
   </div>
 
   <div class="work__container container grid">
-    <!-- Card Template -->
+    <!-- Sample Project Card -->
     <div class="work__card mix web">
       <div class="work__info">
         <h3 class="work__title">E-commerce Web App</h3>
-        <p class="work__description">Full-stack project built with MERN stack with responsive and accessible UI.</p>
+        <p class="work__description">MERN stack full-stack app with accessible UI and cart system.</p>
         <button class="work__button" data-video="ru3H-AEa6X0">
           Watch Demo <i class='bx bx-play-circle work__icon'></i>
         </button>
       </div>
     </div>
 
-    <div class="work__card mix app">
-      <div class="work__info">
-        <h3 class="work__title">Cross-Platform Mobile App</h3>
-        <p class="work__description">React Native mobile app supporting iOS and Android with real-time features.</p>
-        <a href="https://github.com/eshad" class="work__button" target="_blank">
-          View Code <i class='bx bx-code-alt work__icon'></i>
-        </a>
-      </div>
-    </div>
-
-    <div class="work__card mix uiux">
-      <div class="work__info">
-        <h3 class="work__title">LRT/MRT Signaling System</h3>
-        <p class="work__description">A UX prototype simulating signaling systems in urban transport lines.</p>
-        <button class="work__button" data-video="VxFVLkVqEUo">
-          Watch Demo <i class='bx bx-play-circle work__icon'></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="work__card mix devops">
-      <div class="work__info">
-        <h3 class="work__title">Cloud Infrastructure & CI/CD</h3>
-        <p class="work__description">Terraform + GitHub Actions setup for automated deployment pipelines.</p>
-        <a href="https://github.com/eshad" class="work__button" target="_blank">
-          View Documentation <i class='bx bx-link-external work__icon'></i>
-        </a>
-      </div>
-    </div>
-
-    <div class="work__card mix app">
-      <div class="work__info">
-        <h3 class="work__title">IoT Smart Building Automation</h3>
-        <p class="work__description">Arduino & Node-RED-based smart building automation prototype.</p>
-        <button class="work__button" data-video="ucnRe1eglwU">
-          Watch Prototype <i class='bx bx-play-circle work__icon'></i>
-        </button>
-      </div>
-    </div>
+    <!-- Repeat for other cards with different data-video -->
   </div>
 
   <!-- Modal -->
@@ -868,21 +830,34 @@
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
     <script>
-        document.querySelector('.video-modal-close').addEventListener('click', () => {
-        const modal = document.getElementById('videoModal');
-        const iframe = document.getElementById('videoFrame');
-        iframe.src = '';
-        modal.style.display = 'none';
-        });
+         document.querySelectorAll('.work__button[data-video]').forEach(button => {
+    button.addEventListener('click', () => {
+      const videoId = button.getAttribute('data-video');
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('videoFrame');
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      modal.style.display = 'flex';
+    });
+  });
 
-        window.addEventListener('click', (e) => {
-        const modal = document.getElementById('videoModal');
-        if (e.target === modal) {
-            document.getElementById('videoFrame').src = '';
-            modal.style.display = 'none';
-        }
-        });
-    </script>
+  
+  // Close modal
+  document.querySelector('.video-modal-close').addEventListener('click', () => {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoFrame');
+    iframe.src = '';
+    modal.style.display = 'none';
+  });
+
+  // Close modal on outside click
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('videoModal');
+    if (e.target === modal) {
+      document.getElementById('videoFrame').src = '';
+      modal.style.display = 'none';
+    }
+  });
+</script>
 </body>
 
 </html>
