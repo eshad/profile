@@ -873,50 +873,53 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
-    <script>
-  // Modal functionality
-  document.querySelectorAll('.work__button[data-video]').forEach(button => {
-    button.addEventListener('click', () => {
-      const videoId = button.getAttribute('data-video');
-      const iframe = document.getElementById('videoFrame');
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-      document.getElementById('videoModal').style.display = 'flex';
-    });
-  });
+   <!-- Make sure you include MixItUp -->
+<script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
 
-  document.querySelector('.video-modal-close').addEventListener('click', () => {
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('videoFrame');
-    iframe.src = '';
-    modal.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-    const modal = document.getElementById('videoModal');
-    if (e.target === modal) {
-      document.getElementById('videoFrame').src = '';
-      modal.style.display = 'none';
+<script>
+  // MixItUp filtering
+  var mixer = mixitup('.work__container', {
+    selectors: {
+      target: '.mix'
+    },
+    animation: {
+      duration: 300
     }
   });
 
-  // Filtering logic
-  const filterButtons = document.querySelectorAll('.work__item');
-  const cards = document.querySelectorAll('.work__card');
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter');
-      filterButtons.forEach(btn => btn.classList.remove('active-work'));
-      button.classList.add('active-work');
-
-      cards.forEach(card => {
-        if (filter === 'all' || card.classList.contains(filter.replace('.', ''))) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+  // Active tab UI
+  const filterTabs = document.querySelectorAll('.work__item');
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      filterTabs.forEach(t => t.classList.remove('active-work'));
+      this.classList.add('active-work');
     });
+  });
+
+  // Video Modal logic
+  const modal = document.getElementById('videoModal');
+  const videoFrame = document.getElementById('videoFrame');
+  const closeBtn = document.querySelector('.video-modal-close');
+  const videoButtons = document.querySelectorAll('.work__button[data-video]');
+
+  videoButtons.forEach(btn => {
+    btn.addEventListener('click', function () {
+      const videoId = this.dataset.video;
+      videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      modal.style.display = 'block';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    videoFrame.src = '';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+      modal.style.display = 'none';
+      videoFrame.src = '';
+    }
   });
 </script>
 </body>
