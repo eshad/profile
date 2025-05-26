@@ -38,6 +38,31 @@
         const music = document.getElementById("background-music");
         music.play();
     }, { once: true });
+
+    document.querySelectorAll('.work__button[data-video]').forEach(button => {
+  button.addEventListener('click', () => {
+    const videoId = button.getAttribute('data-video');
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoFrame');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    modal.style.display = 'flex';
+  });
+});
+
+document.querySelector('.video-modal-close').addEventListener('click', () => {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('videoFrame');
+  iframe.src = '';
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  const modal = document.getElementById('videoModal');
+  if (e.target === modal) {
+    document.getElementById('videoFrame').src = '';
+    modal.style.display = 'none';
+  }
+});
 </script>
 
 <body>
@@ -596,73 +621,77 @@
 
       <!--=============== WORK ===============-->
 <section class="work section" id="work">
-    <span class="section__subtitle">My Portfolio</span>
-    <h2 class="section__title">Featured Projects</h2>
+  <span class="section__subtitle">My Portfolio</span>
+  <h2 class="section__title">Featured Projects</h2>
 
-    <div class="work__filters">
-        <span class="work__item active-work" data-filter='all'>All</span>
-        <span class="work__item" data-filter='.app'>Apps</span>
-        <span class="work__item" data-filter='.web'>Web Development</span>
-        <span class="work__item" data-filter='.uiux'>UI/UX Design</span>
-        <span class="work__item" data-filter='.devops'>Cloud & DevOps</span>
+  <div class="work__filters">
+    <span class="work__item active-work" data-filter='all'>All</span>
+    <span class="work__item" data-filter='.app'>Apps</span>
+    <span class="work__item" data-filter='.web'>Web Development</span>
+    <span class="work__item" data-filter='.uiux'>UI/UX Design</span>
+    <span class="work__item" data-filter='.devops'>Cloud & DevOps</span>
+  </div>
+
+  <div class="work__container container grid">
+    <!-- Card Template -->
+    <div class="work__card mix web">
+      <div class="work__info">
+        <h3 class="work__title">E-commerce Web App</h3>
+        <p class="work__description">Full-stack project built with MERN stack with responsive and accessible UI.</p>
+        <button class="work__button" data-video="ru3H-AEa6X0">
+          Watch Demo <i class='bx bx-play-circle work__icon'></i>
+        </button>
+      </div>
     </div>
 
-    <div class="work__container container grid">
-        <!-- App Development -->
-        <div class="work__card mix app">
-            <img src="assets/img/work1.png" alt="" class="work__img">
-
-            <h3 class="work__title">Cross-Platform Mobile App</h3>
-
-            <a href="https://github.com/eshad" class="work__button" target="_blank">
-                View Code <i class='bx bx-right-arrow work__icon'></i>
-            </a>
-        </div>
-
-        <!-- Web Development -->
-        <div class="work__card mix web">
-            <img src="assets/img/work2.png" alt="" class="work__img">
-
-            <h3 class="work__title">E-commerce Web App</h3>
-
-            <a href="https://youtu.be/ru3H-AEa6X0" class="work__button" target="_blank">
-                Live Demo <i class='bx bx-right-arrow work__icon'></i>
-            </a>
-        </div>
-
-        <!-- UI/UX Design -->
-        <div class="work__card mix uiux">
-            <img src="assets/img/work3.png" alt="" class="work__img">
-
-            <h3 class="work__title">LRT/MRT Signaling System</h3>
-
-            <a href="https://youtu.be/VxFVLkVqEUo" class="work__button" target="_blank">
-                Watch Demo <i class='bx bx-right-arrow work__icon'></i>
-            </a>
-        </div>
-
-        <!-- Cloud & DevOps -->
-        <div class="work__card mix devops">
-            <img src="assets/img/work4.png" alt="" class="work__img">
-
-            <h3 class="work__title">Cloud Infrastructure & CI/CD</h3>
-
-            <a href="https://github.com/eshad" class="work__button" target="_blank">
-                View Documentation <i class='bx bx-right-arrow work__icon'></i>
-            </a>
-        </div>
-
-        <!-- IoT & Automation -->
-        <div class="work__card mix app">
-            <img src="assets/img/work5.png" alt="" class="work__img">
-
-            <h3 class="work__title">IoT Smart Building Automation</h3>
-
-            <a href="https://youtu.be/ucnRe1eglwU" class="work__button" target="_blank">
-                Watch Prototype <i class='bx bx-right-arrow work__icon'></i>
-            </a>
-        </div>
+    <div class="work__card mix app">
+      <div class="work__info">
+        <h3 class="work__title">Cross-Platform Mobile App</h3>
+        <p class="work__description">React Native mobile app supporting iOS and Android with real-time features.</p>
+        <a href="https://github.com/eshad" class="work__button" target="_blank">
+          View Code <i class='bx bx-code-alt work__icon'></i>
+        </a>
+      </div>
     </div>
+
+    <div class="work__card mix uiux">
+      <div class="work__info">
+        <h3 class="work__title">LRT/MRT Signaling System</h3>
+        <p class="work__description">A UX prototype simulating signaling systems in urban transport lines.</p>
+        <button class="work__button" data-video="VxFVLkVqEUo">
+          Watch Demo <i class='bx bx-play-circle work__icon'></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="work__card mix devops">
+      <div class="work__info">
+        <h3 class="work__title">Cloud Infrastructure & CI/CD</h3>
+        <p class="work__description">Terraform + GitHub Actions setup for automated deployment pipelines.</p>
+        <a href="https://github.com/eshad" class="work__button" target="_blank">
+          View Documentation <i class='bx bx-link-external work__icon'></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="work__card mix app">
+      <div class="work__info">
+        <h3 class="work__title">IoT Smart Building Automation</h3>
+        <p class="work__description">Arduino & Node-RED-based smart building automation prototype.</p>
+        <button class="work__button" data-video="ucnRe1eglwU">
+          Watch Prototype <i class='bx bx-play-circle work__icon'></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+      <span class="video-modal-close">&times;</span>
+      <iframe id="videoFrame" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
 </section>
 
 <!--=============== PORTFOLIO OVERVIEW ===============-->
