@@ -49,20 +49,7 @@
   });
 });
 
-document.querySelector('.video-modal-close').addEventListener('click', () => {
-  const modal = document.getElementById('videoModal');
-  const iframe = document.getElementById('videoFrame');
-  iframe.src = '';
-  modal.style.display = 'none';
-});
 
-window.addEventListener('click', (e) => {
-  const modal = document.getElementById('videoModal');
-  if (e.target === modal) {
-    document.getElementById('videoFrame').src = '';
-    modal.style.display = 'none';
-  }
-});
 </script>
 
 <body>
@@ -880,6 +867,22 @@ window.addEventListener('click', (e) => {
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+    <script>
+        document.querySelector('.video-modal-close').addEventListener('click', () => {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('videoFrame');
+        iframe.src = '';
+        modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+        const modal = document.getElementById('videoModal');
+        if (e.target === modal) {
+            document.getElementById('videoFrame').src = '';
+            modal.style.display = 'none';
+        }
+        });
+    </script>
 </body>
 
 </html>
