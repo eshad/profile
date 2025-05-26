@@ -608,81 +608,58 @@
 
       <!--=============== WORK ===============-->
 <section class="work section" id="work">
-  <span class="section__subtitle">My Portfolio</span>
-  <h2 class="section__title">Featured Projects</h2>
+  <div class="container">
+    <span class="section__subtitle">My Portfolio</span>
+    <h2 class="section__title">Featured Projects</h2>
 
-  <!-- Filter Buttons -->
-  <div class="work__filters">
-    <span class="work__item active-work" data-filter="all">All</span>
-    <span class="work__item" data-filter=".app">Apps</span>
-    <span class="work__item" data-filter=".web">Web Development</span>
-    <span class="work__item" data-filter=".uiux">UI/UX Design</span>
-    <span class="work__item" data-filter=".devops">Cloud & DevOps</span>
-  </div>
+    <!-- Filter Buttons -->
+    <div class="work__filters">
+      <span class="work__item active-work" data-filter="all">All</span>
+      <span class="work__item" data-filter=".app">Apps</span>
+      <span class="work__item" data-filter=".web">Web Development</span>
+      <span class="work__item" data-filter=".uiux">UI/UX Design</span>
+      <span class="work__item" data-filter=".devops">Cloud & DevOps</span>
+    </div>
 
-  <!-- Project Cards -->
-  <div class="work__container container grid">
-    <!-- Card 1 -->
-    <div class="work__card mix web">
-      <div class="work__info">
+    <!-- Project Cards -->
+    <div class="work__container grid">
+      <div class="work__card mix web">
         <h3 class="work__title">E-commerce Web App</h3>
-        <p class="work__description">MERN stack full-stack app with responsive and accessible UI.</p>
-        <button class="work__button" data-video="ru3H-AEa6X0">
-          Watch Demo <i class="bx bx-play-circle work__icon"></i>
-        </button>
+        <p class="work__description">MERN stack full-stack app with responsive UI.</p>
+        <button class="work__button" data-video="ru3H-AEa6X0">Watch Demo</button>
       </div>
-    </div>
 
-    <!-- Card 2 -->
-    <div class="work__card mix app">
-      <div class="work__info">
+      <div class="work__card mix app">
         <h3 class="work__title">Cross-Platform Mobile App</h3>
-        <p class="work__description">React Native mobile app for iOS and Android with real-time features.</p>
-        <a href="https://github.com/eshad" class="work__button" target="_blank">
-          View Code <i class="bx bx-code-alt work__icon"></i>
-        </a>
+        <p class="work__description">React Native app with real-time features.</p>
+        <a href="https://github.com/eshad" class="work__button" target="_blank">View Code</a>
       </div>
-    </div>
 
-    <!-- Card 3 -->
-    <div class="work__card mix uiux">
-      <div class="work__info">
+      <div class="work__card mix uiux">
         <h3 class="work__title">LRT/MRT Signaling System</h3>
-        <p class="work__description">A UX prototype simulating signaling systems in urban transport lines.</p>
-        <button class="work__button" data-video="VxFVLkVqEUo">
-          Watch Demo <i class="bx bx-play-circle work__icon"></i>
-        </button>
+        <p class="work__description">UX prototype for urban signaling.</p>
+        <button class="work__button" data-video="VxFVLkVqEUo">Watch Demo</button>
+      </div>
+
+      <div class="work__card mix devops">
+        <h3 class="work__title">CI/CD Cloud Infrastructure</h3>
+        <p class="work__description">GitHub Actions + Terraform deployment.</p>
+        <a href="https://github.com/eshad" class="work__button" target="_blank">Docs</a>
+      </div>
+
+      <div class="work__card mix app">
+        <h3 class="work__title">IoT Smart Building</h3>
+        <p class="work__description">Arduino + Node-RED automation demo.</p>
+        <button class="work__button" data-video="ucnRe1eglwU">Watch Prototype</button>
       </div>
     </div>
 
-    <!-- Card 4 -->
-    <div class="work__card mix devops">
-      <div class="work__info">
-        <h3 class="work__title">Cloud Infrastructure & CI/CD</h3>
-        <p class="work__description">Terraform + GitHub Actions for deployment pipelines.</p>
-        <a href="https://github.com/eshad" class="work__button" target="_blank">
-          View Documentation <i class="bx bx-link-external work__icon"></i>
-        </a>
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+      <div class="video-modal-content">
+        <span class="video-modal-close">&times;</span>
+        <iframe id="videoFrame" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
       </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="work__card mix app">
-      <div class="work__info">
-        <h3 class="work__title">IoT Smart Building Automation</h3>
-        <p class="work__description">Arduino & Node-RED based smart building automation prototype.</p>
-        <button class="work__button" data-video="ucnRe1eglwU">
-          Watch Prototype <i class="bx bx-play-circle work__icon"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Video Modal -->
-  <div id="videoModal" class="video-modal">
-    <div class="video-modal-content">
-      <span class="video-modal-close">&times;</span>
-      <iframe id="videoFrame" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -875,7 +852,6 @@
     <script src="assets/js/main.js"></script>
    <!-- Make sure you include MixItUp -->
 <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
-
 <script>
   // MixItUp filtering
   var mixer = mixitup('.work__container', {
@@ -906,7 +882,7 @@
     btn.addEventListener('click', function () {
       const videoId = this.dataset.video;
       videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-      modal.style.display = 'block';
+      modal.style.display = 'flex'; // use flex to match modal CSS
     });
   });
 
@@ -916,7 +892,7 @@
   });
 
   window.addEventListener('click', (e) => {
-    if (e.target == modal) {
+    if (e.target === modal) {
       modal.style.display = 'none';
       videoFrame.src = '';
     }
