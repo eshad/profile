@@ -658,7 +658,7 @@
     <div id="videoModal" class="video-modal">
       <div class="video-modal-content">
         <span class="video-modal-close">&times;</span>
-        <iframe id="videoFrame" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+        <iframe id="videoFrame" width="100%" height="400" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -876,8 +876,7 @@
   const modal = document.getElementById('videoModal');
   const videoFrame = document.getElementById('videoFrame');
   const closeBtn = document.querySelector('.video-modal-close');
-  const videoButtons = document.querySelectorAll('.work__button[data-video]');
-
+const videoButtons = document.querySelectorAll('[data-video]');
   videoButtons.forEach(btn => {
     btn.addEventListener('click', function () {
       const videoId = this.dataset.video;
