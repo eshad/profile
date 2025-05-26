@@ -41,49 +41,31 @@
 
 </script>
 <script>
-  // MixItUp filtering
-  var mixer = mixitup('.work__container', {
-    selectors: {
-      target: '.mix'
-    },
-    animation: {
-      duration: 300
-    }
-  });
-
-  // Active tab switching
-  const filterTabs = document.querySelectorAll('.work__item');
-  filterTabs.forEach(tab => {
-    tab.addEventListener('click', function () {
-      filterTabs.forEach(t => t.classList.remove('active-work'));
-      this.classList.add('active-work');
-    });
-  });
-
-  // Video Modal logic
-  const modal = document.getElementById('videoModal');
-  const videoFrame = document.getElementById('videoFrame');
-  const closeBtn = document.querySelector('.video-modal-close');
-  const videoButtons = document.querySelectorAll('[data-video]');
-
-  videoButtons.forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault(); // Prevent <a> tag default
-      const videoId = this.dataset.video;
-      videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+ // Open modal
+  document.querySelectorAll('.work__button[data-video]').forEach(button => {
+    button.addEventListener('click', () => {
+      const videoId = button.getAttribute('data-video');
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('videoFrame');
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
       modal.style.display = 'flex';
     });
   });
 
-  closeBtn.addEventListener('click', () => {
+  // Close modal
+  document.querySelector('.video-modal-close').addEventListener('click', () => {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoFrame');
+    iframe.src = '';
     modal.style.display = 'none';
-    videoFrame.src = '';
   });
 
+  // Close modal on outside click
   window.addEventListener('click', (e) => {
+    const modal = document.getElementById('videoModal');
     if (e.target === modal) {
+      document.getElementById('videoFrame').src = '';
       modal.style.display = 'none';
-      videoFrame.src = '';
     }
   });
 </script>
