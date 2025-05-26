@@ -611,30 +611,74 @@
   <span class="section__subtitle">My Portfolio</span>
   <h2 class="section__title">Featured Projects</h2>
 
+  <!-- Filter Buttons -->
   <div class="work__filters">
-    <span class="work__item active-work" data-filter='all'>All</span>
-    <span class="work__item" data-filter='.app'>Apps</span>
-    <span class="work__item" data-filter='.web'>Web Development</span>
-    <span class="work__item" data-filter='.uiux'>UI/UX Design</span>
-    <span class="work__item" data-filter='.devops'>Cloud & DevOps</span>
+    <span class="work__item active-work" data-filter="all">All</span>
+    <span class="work__item" data-filter=".app">Apps</span>
+    <span class="work__item" data-filter=".web">Web Development</span>
+    <span class="work__item" data-filter=".uiux">UI/UX Design</span>
+    <span class="work__item" data-filter=".devops">Cloud & DevOps</span>
   </div>
 
+  <!-- Project Cards -->
   <div class="work__container container grid">
-    <!-- Sample Project Card -->
+    <!-- Card 1 -->
     <div class="work__card mix web">
       <div class="work__info">
         <h3 class="work__title">E-commerce Web App</h3>
-        <p class="work__description">MERN stack full-stack app with accessible UI and cart system.</p>
+        <p class="work__description">MERN stack full-stack app with responsive and accessible UI.</p>
         <button class="work__button" data-video="ru3H-AEa6X0">
-          Watch Demo <i class='bx bx-play-circle work__icon'></i>
+          Watch Demo <i class="bx bx-play-circle work__icon"></i>
         </button>
       </div>
     </div>
 
-    <!-- Repeat for other cards with different data-video -->
+    <!-- Card 2 -->
+    <div class="work__card mix app">
+      <div class="work__info">
+        <h3 class="work__title">Cross-Platform Mobile App</h3>
+        <p class="work__description">React Native mobile app for iOS and Android with real-time features.</p>
+        <a href="https://github.com/eshad" class="work__button" target="_blank">
+          View Code <i class="bx bx-code-alt work__icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="work__card mix uiux">
+      <div class="work__info">
+        <h3 class="work__title">LRT/MRT Signaling System</h3>
+        <p class="work__description">A UX prototype simulating signaling systems in urban transport lines.</p>
+        <button class="work__button" data-video="VxFVLkVqEUo">
+          Watch Demo <i class="bx bx-play-circle work__icon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="work__card mix devops">
+      <div class="work__info">
+        <h3 class="work__title">Cloud Infrastructure & CI/CD</h3>
+        <p class="work__description">Terraform + GitHub Actions for deployment pipelines.</p>
+        <a href="https://github.com/eshad" class="work__button" target="_blank">
+          View Documentation <i class="bx bx-link-external work__icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="work__card mix app">
+      <div class="work__info">
+        <h3 class="work__title">IoT Smart Building Automation</h3>
+        <p class="work__description">Arduino & Node-RED based smart building automation prototype.</p>
+        <button class="work__button" data-video="ucnRe1eglwU">
+          Watch Prototype <i class="bx bx-play-circle work__icon"></i>
+        </button>
+      </div>
+    </div>
   </div>
 
-  <!-- Modal -->
+  <!-- Video Modal -->
   <div id="videoModal" class="video-modal">
     <div class="video-modal-content">
       <span class="video-modal-close">&times;</span>
@@ -830,18 +874,16 @@
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
     <script>
-         document.querySelectorAll('.work__button[data-video]').forEach(button => {
+  // Modal functionality
+  document.querySelectorAll('.work__button[data-video]').forEach(button => {
     button.addEventListener('click', () => {
       const videoId = button.getAttribute('data-video');
-      const modal = document.getElementById('videoModal');
       const iframe = document.getElementById('videoFrame');
       iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-      modal.style.display = 'flex';
+      document.getElementById('videoModal').style.display = 'flex';
     });
   });
 
-  
-  // Close modal
   document.querySelector('.video-modal-close').addEventListener('click', () => {
     const modal = document.getElementById('videoModal');
     const iframe = document.getElementById('videoFrame');
@@ -849,13 +891,32 @@
     modal.style.display = 'none';
   });
 
-  // Close modal on outside click
   window.addEventListener('click', (e) => {
     const modal = document.getElementById('videoModal');
     if (e.target === modal) {
       document.getElementById('videoFrame').src = '';
       modal.style.display = 'none';
     }
+  });
+
+  // Filtering logic
+  const filterButtons = document.querySelectorAll('.work__item');
+  const cards = document.querySelectorAll('.work__card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      filterButtons.forEach(btn => btn.classList.remove('active-work'));
+      button.classList.add('active-work');
+
+      cards.forEach(card => {
+        if (filter === 'all' || card.classList.contains(filter.replace('.', ''))) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
   });
 </script>
 </body>
