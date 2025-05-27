@@ -24,8 +24,19 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
+    .video-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
     .video-modal {
       display: none;
       position: fixed;
@@ -743,7 +754,40 @@
         </div>
     </div>
 </section>
+<!-- Project Screenshot Carousel Section -->
+<section class="work__screenshots section">
+  <div class="container">
+    <span class="section__subtitle">Project Gallery</span>
+    <h2 class="section__title">Screenshots Preview</h2>
 
+    <!-- Swiper -->
+    <div class="swiper projectSwiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="images/project1.png" alt="Project 1 Screenshot" class="screenshot-img" />
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="images/project2.png" alt="Project 2 Screenshot" class="screenshot-img" />
+        </div>
+
+        <!-- Add more slides -->
+        <div class="swiper-slide">
+          <img src="images/project3.png" alt="Project 3 Screenshot" class="screenshot-img" />
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
         <!--=============== CONTACT ===============-->
         <section class="contact section" id="contact">
             <sapn class="section__subtitle">Get in touch</sapn>
@@ -916,6 +960,30 @@
     } else {
       console.error("Modal elements not found in DOM.");
     }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Swiper Initialization -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.projectSwiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      effect: 'slide',
+      speed: 600,
+    });
   });
 </script>
 </body>
