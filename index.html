@@ -839,17 +839,11 @@
    <!-- Make sure you include MixItUp -->
 <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
 <script>
-  // MixItUp filtering
   var mixer = mixitup('.work__container', {
-    selectors: {
-      target: '.mix'
-    },
-    animation: {
-      duration: 300
-    }
+    selectors: { target: '.mix' },
+    animation: { duration: 300 }
   });
 
-  // Active tab logic
   const filterTabs = document.querySelectorAll('.work__item');
   filterTabs.forEach(tab => {
     tab.addEventListener('click', function () {
@@ -858,7 +852,6 @@
     });
   });
 
-  // Video modal logic
   const modal = document.getElementById('videoModal');
   const videoFrame = document.getElementById('videoFrame');
   const closeBtn = document.querySelector('.video-modal-close');
@@ -866,7 +859,7 @@
   if (modal && videoFrame && closeBtn) {
     document.querySelectorAll('[data-video]').forEach(button => {
       button.addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent navigation if it's an <a>
+        e.preventDefault();
         const videoId = this.dataset.video;
         videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
         modal.style.display = 'flex';
@@ -875,7 +868,7 @@
 
     closeBtn.addEventListener('click', () => {
       modal.style.display = 'none';
-      videoFrame.src = ''; // Stop video
+      videoFrame.src = '';
     });
 
     window.addEventListener('click', (e) => {
