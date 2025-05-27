@@ -25,98 +25,111 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <style>
-    .video-modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
+ <style>
+  /* ========= Video Modal ========= */
+  .video-modal {
+    display: none;
+    position: fixed;
+    inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .video-modal-content {
+    background: #ffffff;
+    position: relative;
+    padding: 1rem;
+    max-width: 800px;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .video-modal-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+  }
+
+  /* ========= Portfolio Section ========= */
+  .portfolio-overview.section {
+    padding: 4rem 2rem;
+    background-color: #0f0f10;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .portfolio__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .portfolio__content {
+    margin-bottom: 2rem;
+  }
+
+  .portfolio__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .portfolio__description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 1.2rem;
+    max-width: 900px;
+  }
+
+  /* ========= Screenshot Slider (Swiper) ========= */
+  .work__screenshots .swiper {
+    height: 400px;
+    overflow: hidden;
+    padding-bottom: 2rem;
+  }
+
+  .work__screenshots .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .screenshot-img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ========= Responsive ========= */
+  @media (max-width: 768px) {
+    .portfolio__title {
+      font-size: 1.5rem;
     }
-    .video-modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
+
+    .portfolio__description {
+      font-size: 1rem;
     }
 
-    .video-modal-content {
-      background: #fff;
-      position: relative;
-      padding: 1rem;
-      max-width: 800px;
-      width: 90%;
+    .work__screenshots .swiper {
+      height: 250px;
     }
-
-    .video-modal-close {
-      position: absolute;
-      top: 0.5rem;
-      right: 1rem;
-      font-size: 2rem;
-      color: #000;
-      cursor: pointer;
-    }
-    .portfolio__container {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem; /* Adds space between each block */
-}
-
-.portfolio__content {
-  margin-bottom: 2rem;
-}
-
-.portfolio__title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.portfolio__description {
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: #e0e0e0;
-  margin-bottom: 1.2rem;
-  max-width: 900px;
-}
-.portfolio-overview.section {
-  padding: 4rem 2rem;
-  background-color: #0f0f10;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-radius: 12px;
-}
-/* Constrain swiper images and section */
-.work__screenshots .swiper {
-  height: 400px;
-  overflow: hidden;
-  padding-bottom: 2rem;
-}
-
-.work__screenshots .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.screenshot-img {
-  height: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-  </style>
+  }
+</style>
     <title> M.Hasan's Portfolio </title>
 </head>
 
