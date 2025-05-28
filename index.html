@@ -147,6 +147,24 @@
 
 </script>
 
+<script>
+  function sendWhatsAppMessage(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("whatsapp-name").value.trim();
+    const email = document.getElementById("whatsapp-email").value.trim();
+    const message = document.getElementById("whatsapp-message").value.trim();
+
+    const phoneNumber = "+601116395365"; // Replace with your full WhatsApp number (country code + number, no + or spaces)
+
+    const fullMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${fullMessage}`;
+
+    window.open(whatsappURL, "_blank");
+  }
+</script>
+
 
 <body>
     <!--=============== HEADER ===============-->
@@ -949,26 +967,26 @@
                     <h3 class="contact__title contact__title-form">Write Me your Message</h3>
                      <!--=============== FORM START ===============-->
                      <form name="messend"netlify>
-                    <form action="" class="contact__form">
-                        <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Name</label>
-                            <input type="text" placeholder="Enter name" class="contact__form-input">
-                        </div>
+                    <form class="contact__form" onsubmit="sendWhatsAppMessage(event)">
+  <div class="contact__form-div">
+    <label class="contact__form-tag">Name</label>
+    <input type="text" id="whatsapp-name" placeholder="Enter name" class="contact__form-input" required>
+  </div>
 
-                        <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Mail</label>
-                            <input type="text" placeholder="Enter email" class="contact__form-input">
-                        </div>
+  <div class="contact__form-div">
+    <label class="contact__form-tag">Mail</label>
+    <input type="email" id="whatsapp-email" placeholder="Enter email" class="contact__form-input" required>
+  </div>
 
-                        <div class="contact__form-div contact__form-area">
-                            <label for="" class="contact__form-tag">Message</label>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Write your Message"
-                                class="contact__form-input "></textarea>
-                        </div>
-                        <button class="button">
-                            Send Message
-                        </button>
-                    </form>
+  <div class="contact__form-div contact__form-area">
+    <label class="contact__form-tag">Message</label>
+    <textarea id="whatsapp-message" cols="30" rows="10" placeholder="Write your Message" class="contact__form-input" required></textarea>
+  </div>
+
+  <button class="button" type="submit">
+    Send via WhatsApp
+  </button>
+</form>
                    <!--=============== FORM END ===============-->
                 </div>
 
