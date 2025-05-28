@@ -197,97 +197,100 @@
     <!--=============== MAIN ===============-->
     <main class="main">
         <!--=============== HOME ===============-->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__data">
-                    <span class="home__greeting">Hello, I'm</span>
-                    <h1 class="home__name">M. Hasan</h1> 
-                    <!-- Change the name And additional details -->
-<!-- MAKE NEW CLASS  -->
-<div class="newcontainer">
-<div class="static-text"><span>I AM </span></div>
+<section class="home section" id="home">
+  <div class="home__container container grid">
 
-<div class="dynamic-text">
-<li><span> Project Management Specialist</span></li>
-<li><span> Sr. Software Engineering</span></li>
-<li><span> Team Lead with Full Stack skills set</span></li>
-<li><span> IoT / Embeed system expert</span></li>
+    <!-- Left Side: Text and Buttons -->
+    <div class="home__data">
+      <span class="home__greeting">Hello, I'm</span>
+      <h1 class="home__name">M. Hasan</h1>
 
-</div>
+      <!-- Dynamic Title -->
+      <div class="newcontainer">
+        <div class="static-text"><span>I AM</span></div>
+        <div class="dynamic-text">
+          <li><span>Project Management Specialist</span></li>
+          <li><span>Sr. Software Engineer</span></li>
+          <li><span>Team Lead with Full Stack skill set</span></li>
+          <li><span>IoT / Embedded System Expert</span></li>
+        </div>
+      </div>
 
-</div>
-<!-- NEW CODE HERE  -->
+      <h3 class="home__education">Sr. Software Engineer</h3>
 
-                    <h3 class="home__education">Sr.Software Engineer</h3>
+      <!-- Button Group -->
+      <div class="home__buttons">
+        <a href="#about" class="button">About</a>
+        <a download href="assets/pdf/mehadi.pdf" class="button button--ghost">Download CV</a>
+      </div>
+    </div>
 
-                        <a href="#about" class="button">About</a>
-                    </div>
-                </div>
+    <!-- Center Image -->
+    <div class="home__handle">
+      <img src="assets/img/img.jpeg" alt="M. Hasan" class="home__img2">
+    </div>
 
-                <div class="home__handle">
-                    <img src="assets/img/img.jpeg" alt="" class="home__img2">
-                </div>
+    <!-- Social Links -->
+    <div class="home__social">
+      <a href="https://www.linkedin.com/in/eshad-hasan/" target="_blank" class="home__social-link">
+        <i class='bx bxl-linkedin'></i>
+      </a>
+      <a href="https://github.com/eshad" target="_blank" class="home__social-link">
+        <i class='bx bxl-github'></i>
+      </a>
+    </div>
 
-                <div class="home__social">
-                    <a href="https://www.linkedin.com/in/eshad-hasan/" target="_blank" class="home__social-link">
-                        <i class='bx bxl-linkedin'></i>
-                    </a>
-                    <a href="https://github.com/eshad" target="_blank" class="home__social-link">
-                        <i class='bx bxl-github'></i>
-                    </a>
-                </div>
+    <!-- Scroll Down -->
+    <a href="#about" class="home__scroll">
+      <i class='bx bx-mouse home__scroll-icon'></i>
+      <span class="home__scroll-name">Scroll Down</span>
+    </a>
+  </div>
+</section>
 
-                <a href="#about" class="home__scroll">
-                    <i class='bx bx-mouse home__scroll-icon'></i>
-                    <span class="home__scroll-name">Scroll Down</span>
-                </a>
-            </div>
+<!--=============== ABOUT ===============-->
+<section class="about section" id="about">
+  <span class="section__subtitle">My Intro</span>
+  <h2 class="section__title">About Me</h2>
 
-        </section>
+  <div class="about__buttons">
+    <a download href="assets/pdf/mehadi.pdf" class="button button--ghost">Download CV</a>
+  </div>
 
-        <!--=============== ABOUT ===============-->
-        <section class="about section" id="about">
-            <span class="section__subtitle">My Intro</span>
-            <h2 class="section__title">About Me</h2>
-               <div class="about__buttons">
-                    <a href="#about" class="button">About</a>
-                    <a download href="assets/pdf/mehadi.pdf" class="button button--ghost">Download CV</a>
-                </div>
+  <div class="about__container container grid">
+    <img src="assets/img/about1.jpeg" alt="About Image" class="about__img">
 
-            <div class="about__container container grid">
-                <img src="assets/img/about1.jpeg" alt="" class="about__img">
+    <div class="about__data">
+      <div class="about__info">
+        <div class="about__box">
+          <i class='bx bx-award about__icon'></i>
+          <h3 class="about__title">Experience</h3>
+          <span class="about__subtitle">Expert level</span>
+        </div>
+        <div class="about__box">
+          <i class='bx bx-briefcase-alt about__icon'></i>
+          <h3 class="about__title">Years of Experience</h3>
+          <span class="about__subtitle">14</span>
+        </div>
+        <div class="about__box">
+          <i class='bx bx-support about__icon'></i>
+          <h3 class="about__title">Support</h3>
+          <span class="about__subtitle">Online 24/7</span>
+        </div>
+      </div>
 
-                <div class="about__data">
-                    <div class="about__info">
-                        <div class="about__box">
-                            <i class='bx bx-award about__icon'></i>
-                            <h3 class="about__title">Experience</h3>
-                            <span class="about__subtitle">Expert level</span>
-                        </div>
-                        <div class="about__box">
-                            <i class='bx bx-briefcase-alt about__icon'></i>
-                            <h3 class="about__title">Year's of experience</h3>
-                            <span class="about__subtitle">14</span>
-                        </div>
-                        <div class="about__box">
-                            <i class='bx bx-support about__icon'></i>
-                            <h3 class="about__title">Support</h3>
-                            <span class="about__subtitle">Online 24/7</span>
-                        </div>
-                    </div>
+      <p class="about__description">
+        A highly skilled Software Engineer with deep expertise in system architecture, efficient system design, and end-to-end deployment.<br>
+        I specialize in Backend development using <strong>Java, PHP, Python, .Net, C/C++</strong>, combining my passion and profession to build scalable and high-performance applications.<br>
+        With a strong foundation in <strong>UI/UX design</strong>, I craft visually compelling and user-friendly interfaces.<br>
+        My expertise extends to <strong>both Agile and Waterfall methodologies</strong>, ensuring seamless project execution and delivery.<br>
+        I take pride in delivering solutions that meet client expectations, with a proven track record of success and satisfaction.
+      </p>
 
-                    <p class="about__description">
-                        A highly skilled Software Engineer with deep expertise in system architecture, efficient system design, and end-to-end deployment.  
-                        I specialize in Backend development using <strong>Java, PHP, Python, .Net, C/C++</strong>, combining my passion and profession to build scalable and high-performance applications.  
-                        With a strong foundation in <strong>UI/UX design</strong>, I craft visually compelling and user-friendly interfaces.  
-                        My expertise extends to <strong>both Agile and Waterfall methodologies</strong>, ensuring seamless project execution and delivery.  
-                        I take pride in delivering solutions that meet client expectations, with a proven track record of success and satisfaction.
-                    </p>
-
-                    <a href="#contact" class="button about__button-contact">Contact Me</a>
-                </div>
-            </div>
-        </section>
+      <a href="#contact" class="button about__button-contact">Contact Me</a>
+    </div>
+  </div>
+</section>
 
        <!--=============== SKILLS ===============-->
 <section class="skills section" id="skills">
