@@ -26,125 +26,33 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
  <style>
-  /* ========= Video Modal ========= */
-.video-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-  .video-modal-content {
-    background: #ffffff;
-    position: relative;
-    padding: 1rem;
-    max-width: 800px;
-    width: 90%;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  }
-
-  .video-modal-close {
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-    font-size: 2rem;
-    color: #333;
-    cursor: pointer;
-  }
-
-  /* ========= Portfolio Section ========= */
-  .portfolio-overview.section {
-    padding: 4rem 2rem;
-    background-color: #0f0f10;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  }
-
-  .portfolio__container {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-  }
-
-  .portfolio__content {
-    margin-bottom: 2rem;
-  }
-
-  .portfolio__title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #ffffff;
-  }
-
-  .portfolio__description {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #e0e0e0;
-    margin-bottom: 1.2rem;
-    max-width: 900px;
-  }
-
-  /* ========= Screenshot Slider (Swiper) ========= */
-  .work__screenshots .swiper {
-    height: 400px;
-    overflow: hidden;
-    padding-bottom: 2rem;
-  }
-
-  .work__screenshots .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .screenshot-img {
-    width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  }
-
-
-
-  /* ========= Responsive ========= */
+  /* Additional custom styles - most styling is in styles.css */
   @media (max-width: 768px) {
-    .portfolio__title {
-      font-size: 1.5rem;
-    }
-
-    .portfolio__description {
-      font-size: 1rem;
-    }
-
     .work__screenshots .swiper {
-      height: 250px;
+      height: 280px;
     }
   }
 </style>
     <title> M.Hasan's Portfolio </title>
 </head>
 
+<!-- Background Music -->
 <audio id="background-music" loop>
     <source src="assets/music/music.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
 </audio>
 
 <script>
+    // Play music on first click
     document.addEventListener("click", () => {
         const music = document.getElementById("background-music");
+        const musicToggle = document.getElementById("music-toggle");
         music.play();
+        if (musicToggle) {
+            musicToggle.classList.remove('bx-volume-mute');
+            musicToggle.classList.add('bx-volume-full');
+        }
+        window.isPlaying = true;
     }, { once: true });
-
 </script>
 
 <script>
@@ -206,8 +114,11 @@
                 </ul>
             </div>
 
-            <!--=============== theme change button ===============-->
-            <i class='bx bx-moon change-theme change-theme-button' id="theme-button"></i>
+            <!--=============== Theme & Music buttons ===============-->
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <i class='bx bx-volume-mute change-theme' id="music-toggle" title="Toggle Music" style="cursor: pointer;"></i>
+                <i class='bx bx-moon change-theme' id="theme-button" title="Toggle Theme"></i>
+            </div>
 
         </nav>
     </header>
@@ -238,9 +149,17 @@
 
       <!-- Button Group -->
       <div class="home__buttons">
-        <a href="#about" class="button">About</a>
-        <a download href="assets/pdf/mehadi.pdf" class="button button--ghost">Download CV</a>
-        <a download href="assets/pdf/mehadieu.pdf" class="button button--ghost">Download CV (EU)</a>
+        <a href="#about" class="button">About Me</a>
+        <a href="#work" class="button button--ghost">View Projects</a>
+      </div>
+
+      <!-- CV Options -->
+      <div class="home__cv-links">
+        <button class="cv-link" id="view-resume-btn"><i class='bx bx-show'></i> View Resume</button>
+        <span class="cv-divider">|</span>
+        <a download href="assets/pdf/mehadi.pdf" class="cv-link"><i class='bx bx-download'></i> Download CV</a>
+        <span class="cv-divider">|</span>
+        <a download href="assets/pdf/mehadieu.pdf" class="cv-link"><i class='bx bx-download'></i> EU Format</a>
       </div>
     </div>
 
@@ -312,226 +231,112 @@
        <!--=============== SKILLS ===============-->
 <section class="skills section" id="skills">
     <span class="section__subtitle">My Expertise</span>
-    <h2 class="section__title">Technical Skills</h2>
+    <h2 class="section__title">Technical Competencies</h2>
 
     <div class="skills__container container grid">
-        <!-- Software Development -->
+        <!-- Programming Languages -->
         <div class="skills__content">
-            <h3 class="skills__title">Software Development</h3>
-
+            <h3 class="skills__title"><i class='bx bx-code-alt'></i> Programming Languages</h3>
             <div class="skills__box">
                 <div class="skills__group">
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Java</h3>
-                            <span class="skills__level">Advanced</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">C/C++</h3>
-                            <span class="skills__level">Advanced</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Python</h3>
-                            <span class="skills__level">Advanced</span>
-                        </div>
-                    </div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Java / J2EE</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">C / C++</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Python</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">C# / .NET</h3><span class="skills__level">Advanced</span></div></div>
                 </div>
-
                 <div class="skills__group">
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Kotlin</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">C#</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">R (Statistical Computing)</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">PHP / Laravel</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">JavaScript / TypeScript</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Kotlin</h3><span class="skills__level">Intermediate</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Delphi</h3><span class="skills__level">Intermediate</span></div></div>
                 </div>
             </div>
         </div>
 
-        <!-- Web Development -->
+        <!-- Cloud & Infrastructure -->
         <div class="skills__content">
-            <h3 class="skills__title">Web Development</h3>
-
+            <h3 class="skills__title"><i class='bx bx-cloud'></i> Cloud & Infrastructure</h3>
             <div class="skills__box">
                 <div class="skills__group">
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">HTML5 & CSS3</h3>
-                            <span class="skills__level">Advanced</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">JavaScript (ES6+)</h3>
-                            <span class="skills__level">Advanced</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">TypeScript</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">AWS Cloud</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Microsoft Azure</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Google Cloud (GCP)</h3><span class="skills__level">Intermediate</span></div></div>
                 </div>
-
                 <div class="skills__group">
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">React.js / Next.js</h3>
-                            <span class="skills__level">Advanced</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Vue.js</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">PHP / Laravel</h3>
-                            <span class="skills__level">Advanced</span>
-                        </div>
-                    </div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Tencent Cloud</h3><span class="skills__level">Intermediate</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Alibaba Cloud</h3><span class="skills__level">Intermediate</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Docker / Kubernetes</h3><span class="skills__level">Advanced</span></div></div>
                 </div>
             </div>
         </div>
 
-        <!-- Databases & Cloud -->
+        <!-- Databases -->
         <div class="skills__content">
-            <h3 class="skills__title">Databases & Cloud</h3>
-
+            <h3 class="skills__title"><i class='bx bx-data'></i> Database Systems</h3>
             <div class="skills__box">
                 <div class="skills__group">
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">MySQL / PostgreSQL</h3>
-                            <span class="skills__level">Advanced</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">MongoDB</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Firebase</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Oracle</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">MS SQL Server</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">MySQL / PostgreSQL</h3><span class="skills__level">Advanced</span></div></div>
                 </div>
-
                 <div class="skills__group">
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">AWS / Azure</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Docker / Kubernetes</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">GraphQL</h3>
-                            <span class="skills__level">Beginner</span>
-                        </div>
-                    </div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">MongoDB</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">GraphQL</h3><span class="skills__level">Intermediate</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Firebase</h3><span class="skills__level">Intermediate</span></div></div>
                 </div>
             </div>
         </div>
 
         <!-- DevOps & Tools -->
         <div class="skills__content">
-            <h3 class="skills__title">DevOps & Tools</h3>
-
+            <h3 class="skills__title"><i class='bx bx-git-branch'></i> DevOps & CI/CD</h3>
             <div class="skills__box">
                 <div class="skills__group">
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Git / GitHub / Bitbucket</h3>
-                            <span class="skills__level">Advanced</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Jenkins / CI/CD</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Linux Server Administration</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Git / GitHub / Bitbucket</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Jenkins CI/CD</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Linux Administration</h3><span class="skills__level">Advanced</span></div></div>
                 </div>
-
                 <div class="skills__group">
-                    <div class="skills__data">
-                        <i class='bx bxs-badge-check'></i>
-                        <div>
-                            <h3 class="skills__name">Cybersecurity & Penetration Testing</h3>
-                            <span class="skills__level">Intermediate</span>
-                        </div>
-                    </div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">Redmine / Jira</h3><span class="skills__level">Advanced</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">OWASP ZAP</h3><span class="skills__level">Intermediate</span></div></div>
+                    <div class="skills__data"><i class='bx bxs-badge-check'></i><div><h3 class="skills__name">UiPath / RPA</h3><span class="skills__level">Intermediate</span></div></div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Competencies -->
+    <div class="competencies__extra container">
+        <div class="competencies__grid">
+            <div class="competency__card">
+                <i class='bx bx-desktop'></i>
+                <h4>Operating Systems</h4>
+                <p>Unix, Linux, Windows, Android, iOS, macOS</p>
+            </div>
+            <div class="competency__card">
+                <i class='bx bx-layer'></i>
+                <h4>Architecture</h4>
+                <p>Client-Server, N-Tier, SOA, Microservices, GRID</p>
+            </div>
+            <div class="competency__card">
+                <i class='bx bx-brain'></i>
+                <h4>Business Intelligence</h4>
+                <p>SAS Enterprise Miner, SPSS Clementine, AlphaMiner</p>
+            </div>
+            <div class="competency__card">
+                <i class='bx bx-cog'></i>
+                <h4>Development Model</h4>
+                <p>Scrum, Agile, Waterfall, SOLID Principles</p>
+            </div>
+            <div class="competency__card">
+                <i class='bx bx-game'></i>
+                <h4>Game Development</h4>
+                <p>Unity, Cocos, Blender, Game Engines</p>
+            </div>
+            <div class="competency__card">
+                <i class='bx bx-shield'></i>
+                <h4>Security Testing</h4>
+                <p>Penetration Testing, MSF Console, SET Tools</p>
             </div>
         </div>
     </div>
@@ -739,41 +544,76 @@
 
     <!-- Project Cards -->
     <div class="work__container grid">
+      <!-- LRT/MRT Signaling -->
+      <div class="work__card mix app devops">
+        <div class="work__tag">Transportation</div>
+        <h3 class="work__title">LRT/MRT/RTS Signaling System</h3>
+        <p class="work__description">Urban rail signaling system for Malaysia's public transportation network with real-time monitoring.</p>
+        <button class="work__button" data-video="VxFVLkVqEUo"><i class='bx bx-play-circle'></i> Watch Demo</button>
+      </div>
+
+      <!-- Project Management -->
+      <div class="work__card mix devops">
+        <div class="work__tag">Management</div>
+        <h3 class="work__title">Project Tracking System</h3>
+        <p class="work__description">Redmine-based project management with custom workflows, reporting, and team collaboration features.</p>
+        <button class="work__button" data-video="0SGo4ysnkJ0"><i class='bx bx-play-circle'></i> Watch Demo</button>
+      </div>
+
+      <!-- Inventory System -->
+      <div class="work__card mix web devops">
+        <div class="work__tag">Enterprise</div>
+        <h3 class="work__title">Cloud Inventory System</h3>
+        <p class="work__description">Full-featured inventory management with cloud deployment, real-time tracking, and access control.</p>
+        <button class="work__button" data-video="kqwIsAytyI0"><i class='bx bx-play-circle'></i> Watch Demo</button>
+      </div>
+
+      <!-- E-commerce -->
       <div class="work__card mix web">
-        <h3 class="work__title">E-commerce Web App</h3>
-        <p class="work__description">MERN stack full-stack app with responsive UI.</p>
-        <button class="work__button" data-video="ru3H-AEa6X0">Watch Demo</button>
+        <div class="work__tag">E-commerce</div>
+        <h3 class="work__title">Export/Import Platform</h3>
+        <p class="work__description">UK-based commercial product platform with Laravel, React.js, and MySQL backend.</p>
+        <button class="work__button" data-video="ru3H-AEa6X0"><i class='bx bx-play-circle'></i> Watch Demo</button>
       </div>
 
+      <!-- IoT Smart Building -->
+      <div class="work__card mix app devops">
+        <div class="work__tag">IoT</div>
+        <h3 class="work__title">Smart Building Automation</h3>
+        <p class="work__description">IoT-based building automation with Arduino & Raspberry Pi for power scheduling and production planning.</p>
+        <button class="work__button" data-video="ucnRe1eglwU"><i class='bx bx-play-circle'></i> Watch Demo</button>
+      </div>
+
+      <!-- Gaming Project -->
+      <div class="work__card mix app uiux">
+        <div class="work__tag">Gaming</div>
+        <h3 class="work__title">Game Development</h3>
+        <p class="work__description">Sample gaming project built with Unity and Cocos game engines with custom graphics.</p>
+        <button class="work__button" data-video="1fTcyv6d-VI"><i class='bx bx-play-circle'></i> Watch Demo</button>
+      </div>
+
+      <!-- iGaming -->
+      <div class="work__card mix web app">
+        <div class="work__tag">iGaming</div>
+        <h3 class="work__title">iGaming Platform</h3>
+        <p class="work__description">Complete iGaming solution with user management, payment integration, and real-time features.</p>
+        <button class="work__button" data-video="kyoqaYAXk-o"><i class='bx bx-play-circle'></i> Watch Demo</button>
+      </div>
+
+      <!-- ERP System -->
+      <div class="work__card mix web devops">
+        <div class="work__tag">Enterprise</div>
+        <h3 class="work__title">ERP System</h3>
+        <p class="work__description">Web-based Enterprise Resource Planning system with modules for HR, Finance, and Operations.</p>
+        <a href="https://github.com/eshad" class="work__button" target="_blank"><i class='bx bx-code-alt'></i> View Code</a>
+      </div>
+
+      <!-- Data Analysis -->
       <div class="work__card mix app">
-        <h3 class="work__title">Cross-Platform Mobile App</h3>
-        <p class="work__description">React Native app with real-time features.</p>
-        <a href="https://github.com/eshad" class="work__button" target="_blank">View Code</a>
-      </div>
-
-      <div class="work__card mix uiux">
-        <h3 class="work__title">LRT/MRT Signaling System</h3>
-        <p class="work__description">UX prototype for urban signaling.</p>
-        <button class="work__button" data-video="VxFVLkVqEUo">Watch Demo</button>
-      </div>
-
-      <!-- Cloud & DevOps Section -->
-      <div class="work__card mix devops">
-        <h3 class="work__title">Redmine Project Management</h3>
-        <p class="work__description">Project management and portfolio using Redmine with server setup.</p>
-        <button class="work__button" data-video="0SGo4ysnkJ0">Watch Demo</button>
-      </div>
-
-      <div class="work__card mix devops">
-        <h3 class="work__title">Inventory System Deployment</h3>
-        <p class="work__description">Cloud-deployed inventory solution with monitoring and access control.</p>
-        <button class="work__button" data-video="kqwIsAytyI0">Watch Demo</button>
-      </div>
-
-      <div class="work__card mix devops">
-        <h3 class="work__title">iGaming Project</h3>
-        <p class="work__description">Ready iGaming Project</p>
-        <button class="work__button" data-video="kyoqaYAXk-o">Watch Demo</button>
+        <div class="work__tag">AI/ML</div>
+        <h3 class="work__title">Data Analysis Tools</h3>
+        <p class="work__description">Custom data analysis tools using Pandas, NumPy, SciPy for web scraping and analytics.</p>
+        <a href="https://github.com/eshad" class="work__button" target="_blank"><i class='bx bx-code-alt'></i> View Code</a>
       </div>
     </div>
 
@@ -794,62 +634,48 @@
   </div>
 </section>
 
-<!--=============== PORTFOLIO OVERVIEW ===============-->
+<!--=============== APPROACH SECTION ===============-->
 <section class="portfolio-overview section">
-  <span class="section__subtitle">Professional Insights</span>
-  <h2 class="section__title">Portfolio & Observations</h2>
+  <span class="section__subtitle">How I Work</span>
+  <h2 class="section__title">My Approach</h2>
 
   <div class="portfolio__container container">
     <!-- Problem-Solving & Approach -->
     <div class="portfolio__content">
-      <h3 class="portfolio__title">Solving Problems with Experience</h3>
+      <h3 class="portfolio__title">Problem-Solving Philosophy</h3>
       <p class="portfolio__description">
-        In the tech industry, experience is more than just knowing syntax or frameworks—it's about solving real-world challenges efficiently. 
-        The ability to connect technologies, apply logical reasoning, and make strategic decisions under pressure often separates a capable developer from an expert.
+        With 14+ years in software engineering, I've learned that the best solutions come from understanding problems deeply before writing a single line of code.
+        My approach: analyze thoroughly, design intentionally, and implement efficiently.
       </p>
       <p class="portfolio__description">
-        My problem-solving approach always begins with a clear understanding of the root issue. I break down challenges into structured, manageable steps, 
-        then deliver scalable, secure, and optimized solutions. 
-        For instance, when facing a critical production system failure, rather than patching blindly, I analyze logs, replicate the issue, and isolate the root cause—minimizing downtime and avoiding regression.
-      </p>
-      <p class="portfolio__description">
-        Experience is not about memorizing every method—it's about knowing where and how to find the right answers quickly.
+        I break complex challenges into structured, manageable steps—delivering scalable, secure, and maintainable solutions.
+        Whether it's debugging a critical production issue or architecting a new system, I focus on root causes and long-term sustainability.
       </p>
     </div>
 
     <!-- Research & Innovation -->
     <div class="portfolio__content">
-      <h3 class="portfolio__title">Research Focus: AI-Powered Medical Assistant</h3>
+      <h3 class="portfolio__title">Current Research: AI in Healthcare</h3>
       <p class="portfolio__description">
-        One of my current research directions centers around building AI-powered medical assistant tools. These systems leverage machine learning, natural language processing (NLP), 
-        and real-time data to support healthcare professionals in making faster, smarter decisions.
+        I'm actively exploring AI-powered medical assistant tools that leverage machine learning and NLP to support healthcare professionals
+        in making faster, data-driven decisions.
       </p>
       <p class="portfolio__description">
-        My focus is on integrating predictive analytics and curated medical datasets to provide preliminary diagnostics, reduce time to diagnosis, 
-        and ultimately enhance patient care. This is not hypothetical—AI in healthcare is actively reshaping how care is delivered, 
-        and I am committed to being part of this transformation.
+        My focus areas include predictive analytics, medical dataset integration, and preliminary diagnostic systems
+        that can enhance patient care while maintaining strict compliance and accuracy standards.
       </p>
     </div>
 
-    <!-- Hiring & Interview Observations -->
+    <!-- Leadership -->
     <div class="portfolio__content">
-      <h3 class="portfolio__title">A Perspective on Hiring & Interviews</h3>
+      <h3 class="portfolio__title">Leadership & Collaboration</h3>
       <p class="portfolio__description">
-        One of the most common flaws I've noticed in technical hiring processes is the tendency to test memory over mindset. 
-        Far too often, interviews focus on trivia-like questions or unrelated theoretical scenarios, instead of assessing how a candidate solves real-world problems.
+        Beyond technical expertise, I bring strong leadership skills honed through managing cross-functional teams and complex projects.
+        I believe in fostering collaborative environments where innovation thrives and team members grow.
       </p>
       <p class="portfolio__description">
-        From my experience—especially having served in top-level managerial roles—interviewing should be more about evaluating how someone thinks, collaborates, and approaches complexity.
-        Respect for experience and professionalism should guide these interactions. 
-        If someone has years of practical experience and holds advanced qualifications, it's reasonable to expect a certain level of courtesy and thoughtful dialogue.
-      </p>
-      <p class="portfolio__description">
-        Let's be honest—asking a senior developer to write a bubble sort or explain what SOLID stands for as a measure of their capability is not just outdated—it borders on insulting.
-        Instead, focus on evaluating their ability to make architectural decisions, lead teams, and solve business-critical issues. 
-        Technical questions should be relevant, meaningful, and aligned with the candidate’s role and seniority.
-      </p>
-      <p class="portfolio__description">
-        In short, intelligence doesn't mean proving you're smarter than your candidate. It means knowing when to listen, what to ask, and how to measure potential where it matters most—in real work.
+        My management style emphasizes clear communication, mentorship, and creating space for diverse perspectives—because the best solutions
+        often emerge from collaborative problem-solving.
       </p>
     </div>
   </div>
@@ -972,8 +798,8 @@
 </section>
         <!--=============== CONTACT ===============-->
         <section class="contact section" id="contact">
-            <sapn class="section__subtitle">Get in touch</sapn>
-            <h3 class="section__title">Contact Me</h3>
+            <span class="section__subtitle">Get in touch</span>
+            <h2 class="section__title">Contact Me</h2>
 
             <div class="contact__container container grid">
                 <div class="contact__content">
@@ -1008,7 +834,6 @@
                 <div class="contact__content">
                     <h3 class="contact__title contact__title-form">Write Me your Message</h3>
                      <!--=============== FORM START ===============-->
-                     <form name="messend"netlify>
                     <form class="contact__form" onsubmit="sendWhatsAppMessage(event)">
   <div class="contact__form-div">
     <label class="contact__form-tag">Name</label>
@@ -1034,6 +859,22 @@
 
         </section>
     </main>
+
+    <!--=============== RESUME MODAL ===============-->
+    <div id="resumeModal" class="resume-modal">
+      <div class="resume-modal-content">
+        <div class="resume-modal-header">
+          <h3>Resume - Mehadi Hasan</h3>
+          <div class="resume-modal-actions">
+            <a download href="assets/pdf/mehadi.pdf" class="resume-download-btn"><i class='bx bx-download'></i> Download</a>
+            <span class="resume-modal-close">&times;</span>
+          </div>
+        </div>
+        <div class="resume-modal-body">
+          <iframe src="assets/pdf/mehadi.pdf" width="100%" height="100%" style="border: none;"></iframe>
+        </div>
+      </div>
+    </div>
 
     <!--=============== FOOTER ===============-->
     <footer class="footer">
@@ -1061,11 +902,10 @@
 
             <ul class="footer__social">
                 <li class="footer__social-item">
-                    <a href="NO " target="_blank" class="footer__social-link">
-                        <i class='bx bxl-facebook footer__social-icon'></i>
+                    <a href="https://github.com/eshad" target="_blank" class="footer__social-link">
+                        <i class='bx bxl-github footer__social-icon'></i>
                     </a>
                 </li>
-               
                 <li class="footer__social-item">
                     <a href="https://www.linkedin.com/in/eshad-hasan/" target="_blank" class="footer__social-link">
                         <i class='bx bxl-linkedin footer__social-icon'></i>
@@ -1152,8 +992,9 @@
     new Swiper('.projectSwiper', {
       loop: true,
       autoplay: {
-        delay: 3000,
-        disableOnInteraction: false
+        delay: 4000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
       },
       navigation: {
         nextEl: '.swiper-button-next',
@@ -1161,12 +1002,75 @@
       },
       pagination: {
         el: '.swiper-pagination',
-        clickable: true
+        clickable: true,
+        dynamicBullets: true
       },
-      effect: 'slide',
-      speed: 600,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      speed: 800,
+      grabCursor: true,
+      keyboard: {
+        enabled: true
+      }
     });
   });
+</script>
+<!-- Music Toggle Script -->
+<script>
+  const musicToggleBtn = document.getElementById('music-toggle');
+  const bgMusic = document.getElementById('background-music');
+
+  if (musicToggleBtn && bgMusic) {
+    musicToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (window.isPlaying) {
+        bgMusic.pause();
+        musicToggleBtn.classList.remove('bx-volume-full');
+        musicToggleBtn.classList.add('bx-volume-mute');
+        window.isPlaying = false;
+      } else {
+        bgMusic.play();
+        musicToggleBtn.classList.remove('bx-volume-mute');
+        musicToggleBtn.classList.add('bx-volume-full');
+        window.isPlaying = true;
+      }
+    });
+  }
+</script>
+
+<!-- Resume Modal Script -->
+<script>
+  const resumeModal = document.getElementById('resumeModal');
+  const viewResumeBtn = document.getElementById('view-resume-btn');
+  const resumeCloseBtn = document.querySelector('.resume-modal-close');
+
+  if (viewResumeBtn && resumeModal) {
+    viewResumeBtn.addEventListener('click', () => {
+      resumeModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    resumeCloseBtn.addEventListener('click', () => {
+      resumeModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    resumeModal.addEventListener('click', (e) => {
+      if (e.target === resumeModal) {
+        resumeModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+        resumeModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 </script>
 </body>
 

@@ -15,7 +15,13 @@ const modalViews = document.querySelectorAll(".services__modal"),
 
 // When the user clicks on the button, open the modal
 let modal = function (modalClick) {
-  modalViews[modalClick].classList.add("active-modal");
+  const modalEl = modalViews[modalClick];
+  // Move modal to body to avoid transform issues from parent elements
+  document.body.appendChild(modalEl);
+  // Small delay to ensure DOM update
+  setTimeout(() => {
+    modalEl.classList.add("active-modal");
+  }, 10);
 };
 
 modalBtns.forEach((mb, i) => {
@@ -24,12 +30,31 @@ modalBtns.forEach((mb, i) => {
   });
 });
 
-modalClose.forEach((mc) => {
-  mc.addEventListener("click", () => {
-    modalViews.forEach((mv) => {
-      mv.classList.remove("active-modal");
-    });
+// Close modal function
+function closeAllModals() {
+  modalViews.forEach((mv) => {
+    mv.classList.remove("active-modal");
   });
+}
+
+modalClose.forEach((mc) => {
+  mc.addEventListener("click", closeAllModals);
+});
+
+// Close modal when clicking outside content
+modalViews.forEach((mv) => {
+  mv.addEventListener("click", (e) => {
+    if (e.target === mv) {
+      closeAllModals();
+    }
+  });
+});
+
+// Close modal with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeAllModals();
+  }
 });
 
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
