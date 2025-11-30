@@ -25,6 +25,7 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
  <style>
   /* Additional custom styles - most styling is in styles.css */
   @media (max-width: 768px) {
@@ -34,6 +35,19 @@
   }
 </style>
     <title> M.Hasan's Portfolio </title>
+
+    <!-- Force scroll to top on load -->
+    <script>
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { opacity: 0; }
+      body.loaded { opacity: 1; transition: opacity 0.3s ease; }
+    </style>
 </head>
 
 <!-- Background Music -->
@@ -74,7 +88,7 @@
 </script>
 
 
-<body>
+<body onload="window.scrollTo(0,0); document.body.classList.add('loaded');">
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -134,15 +148,11 @@
       <span class="home__greeting">Hello, I'm</span>
       <h1 class="home__name">M. Hasan</h1>
 
-      <!-- Dynamic Title -->
-      <div class="newcontainer">
-        <div class="static-text"><span>I AM</span></div>
-        <div class="dynamic-text">
-          <li><span>Project Management Specialist</span></li>
-          <li><span>Sr. Software Engineer</span></li>
-          <li><span>Team Lead with Full Stack skill set</span></li>
-          <li><span>IoT / Embedded System Expert</span></li>
-        </div>
+      <!-- Dynamic Title with Typing Effect -->
+      <div class="typing-container">
+        <span class="typing-static">I AM</span>
+        <span class="typing-text" id="typing-text"></span>
+        <span class="typing-cursor">|</span>
       </div>
 
       <h3 class="home__education">Sr. Software Engineer</h3>
@@ -206,7 +216,7 @@
         <div class="about__box">
           <i class='bx bx-briefcase-alt about__icon'></i>
           <h3 class="about__title">Years of Experience</h3>
-          <span class="about__subtitle">14</span>
+          <span class="about__subtitle"><span class="counter" data-target="14">0</span>+</span>
         </div>
         <div class="about__box">
           <i class='bx bx-support about__icon'></i>
@@ -689,101 +699,124 @@
     <!-- Swiper -->
     <div class="swiper projectSwiper">
       <div class="swiper-wrapper">
-        <!-- Slide 1 -->
+        <!-- iGaming / JackpotX -->
         <div class="swiper-slide">
-          <img src="images/1.png" alt="Project 1 Screenshot" class="screenshot-img" />
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-          <img src="images/2.png" alt="Project 2 Screenshot" class="screenshot-img" />
-        </div>
-
-        <!-- Add more slides -->
-        <div class="swiper-slide">
-          <img src="images/3.png" alt="Project 3 Screenshot" class="screenshot-img" />
-        </div>
-
-         <div class="swiper-slide">
-          <img src="images/4.png" alt="Project 4 Screenshot" class="screenshot-img" />
-        </div>
-
-         <div class="swiper-slide">
-          <img src="images/5.png" alt="Project 5 Screenshot" class="screenshot-img" />
-        </div>
-
-         <div class="swiper-slide">
-          <img src="images/6.png" alt="Project 6 Screenshot" class="screenshot-img" />
-        </div>
-
-         <div class="swiper-slide">
-          <img src="images/7.png" alt="Project 7 Screenshot" class="screenshot-img" />
-        </div>
-
-         <div class="swiper-slide">
-          <img src="images/8.png" alt="Project 8 Screenshot" class="screenshot-img" />
-        </div>
-
-         <div class="swiper-slide">
-          <img src="images/9.png" alt="Project 9 Screenshot" class="screenshot-img" />
-        </div>
-
-         <div class="swiper-slide">
-          <img src="images/10.png" alt="Project 10 Screenshot" class="screenshot-img" />
-        </div>
-
-         <div class="swiper-slide">
-          <img src="images/12.png" alt="Project 12 Screenshot" class="screenshot-img" />
+          <img src="images/iGaming Project.png" alt="iGaming Project" class="screenshot-img" />
         </div>
         <div class="swiper-slide">
-          <img src="images/24.png" alt="Project 24 Screenshot" class="screenshot-img" />
+          <img src="images/iGaming Project Documentations.png" alt="iGaming Project Documentations" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming User.png" alt="iGaming User" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming User Panel.png" alt="iGaming User Panel" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming User Part JackpotX.png" alt="iGaming User Part JackpotX" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming -Admin.png" alt="iGaming Admin" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming Admin Section.png" alt="iGaming Admin Section" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming Admin Part.png" alt="iGaming Admin Part" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming Admin Part-2.png" alt="iGaming Admin Part 2" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming Admin Part - 3.png" alt="iGaming Admin Part 3" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming JackpotX Admin Panel.png" alt="iGaming JackpotX Admin Panel" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/iGaming JackpotX Admin - 4.png" alt="iGaming JackpotX Admin 4" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/CI:CD JackpotX.png" alt="CI/CD JackpotX" class="screenshot-img" />
         </div>
 
+        <!-- RTS (Real-Time System) -->
         <div class="swiper-slide">
-          <img src="images/15.png" alt="Project 15 Screenshot" class="screenshot-img" />
+          <img src="images/GDU RTS.png" alt="GDU RTS" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/RTS-WebSocket.png" alt="RTS WebSocket" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/RTS - User Panel.png" alt="RTS User Panel" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/RTS-User Panel.png" alt="RTS User Panel" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/RTS-User Panel-1.png" alt="RTS User Panel 1" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/RTS User Panel - 5.png" alt="RTS User Panel 5" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/RTS-Admin control and distribution.png" alt="RTS Admin Control and Distribution" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/RTS Admin control and Distribution - 2.png" alt="RTS Admin Control and Distribution 2" class="screenshot-img" />
         </div>
 
+        <!-- LRT -->
         <div class="swiper-slide">
-          <img src="images/18.png" alt="Project 18 Screenshot" class="screenshot-img" />
+          <img src="images/LRT EventLog.png" alt="LRT EventLog" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/LRT-Admin Control and Distribution.png" alt="LRT Admin Control and Distribution" class="screenshot-img" />
         </div>
 
+        <!-- IoT -->
         <div class="swiper-slide">
-          <img src="images/19.png" alt="Project 19 Screenshot" class="screenshot-img" />
+          <img src="images/IoT.png" alt="IoT" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/IoT-2.png" alt="IoT 2" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/IoT-3 datasheet.png" alt="IoT 3 Datasheet" class="screenshot-img" />
         </div>
 
+        <!-- Management Systems -->
         <div class="swiper-slide">
-          <img src="images/20.png" alt="Project 20 Screenshot" class="screenshot-img" />
+          <img src="images/Hotel ERP Architecture.png" alt="Hotel ERP Architecture" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/Client Management.png" alt="Client Management" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/Law Office Management.png" alt="Law Office Management" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/Doctor Patient Management.png" alt="Doctor Patient Management" class="screenshot-img" />
         </div>
 
+        <!-- Other Projects -->
         <div class="swiper-slide">
-          <img src="images/22.png" alt="Project 22 Screenshot" class="screenshot-img" />
-        </div>
-
-        <div class="swiper-slide">
-          <img src="images/23.png" alt="Project 23 Screenshot" class="screenshot-img" />
-        </div>
-
-        <div class="swiper-slide">
-          <img src="images/25.png" alt="Project 25 Screenshot" class="screenshot-img" />
-        </div>
-
-        <div class="swiper-slide">
-          <img src="images/26.png" alt="Project 26 Screenshot" class="screenshot-img" />
-        </div>
-
-        <div class="swiper-slide">
-          <img src="images/27.png" alt="Project 27 Screenshot" class="screenshot-img" />
-        </div>
-
-        <div class="swiper-slide">
-          <img src="images/28.png" alt="Project 28 Screenshot" class="screenshot-img" />
-        </div>
-
-        <div class="swiper-slide">
-          <img src="images/29.png" alt="Project 29 Screenshot" class="screenshot-img" />
+          <img src="images/TNG.png" alt="TNG" class="screenshot-img" />
         </div>
         <div class="swiper-slide">
-          <img src="images/30.png" alt="Project 29 Screenshot" class="screenshot-img" />
+          <img src="images/Auto QR-Marketing.png" alt="Auto QR Marketing" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/data-center.png" alt="Data Center" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/Forensic Decoding.png" alt="Forensic Decoding" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/Havoc.png" alt="Havoc" class="screenshot-img" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/Pentesting.png" alt="Pentesting" class="screenshot-img" />
         </div>
       </div>
 
@@ -876,6 +909,18 @@
       </div>
     </div>
 
+    <!--=============== IMAGE LIGHTBOX ===============-->
+    <div id="imageLightbox" class="lightbox">
+      <div class="lightbox-content">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+        <span class="lightbox-counter" id="lightboxCounter"></span>
+      </div>
+      <span class="lightbox-nav lightbox-prev"><i class='bx bx-chevron-left'></i></span>
+      <span class="lightbox-nav lightbox-next"><i class='bx bx-chevron-right'></i></span>
+    </div>
+
     <!--=============== FOOTER ===============-->
     <footer class="footer">
         <div class="footer__container container">
@@ -919,8 +964,16 @@
         </div>
     </footer>
 
-    <!--=============== SCROLLREVEAL ===============-->
+    <!--=============== SCROLL TO TOP ON LOAD ===============-->
+    <script>
+      // Scroll to top immediately on page load
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    </script>
 
+    <!--=============== SCROLLREVEAL ===============-->
     <!-- <script src="assets/js/scrollreveal.min.js"></script> -->
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
@@ -1071,6 +1124,137 @@
       }
     });
   }
+</script>
+
+<!-- Image Lightbox Script -->
+<script>
+  const lightbox = document.getElementById('imageLightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  const lightboxPrev = document.querySelector('.lightbox-prev');
+  const lightboxNext = document.querySelector('.lightbox-next');
+  const screenshotImages = document.querySelectorAll('.screenshot-img');
+
+  let currentIndex = 0;
+  const images = Array.from(screenshotImages);
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    const img = images[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = img.alt;
+    lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+  }
+
+  // Click on images to open lightbox
+  screenshotImages.forEach((img, index) => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openLightbox(index);
+    });
+  });
+
+  // Close lightbox
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Navigation
+  lightboxNext.addEventListener('click', (e) => {
+    e.stopPropagation();
+    nextImage();
+  });
+
+  lightboxPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    prevImage();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  });
+</script>
+
+<!-- Auto Scroll Feature -->
+<script>
+(function() {
+  let autoScrollActive = true;
+  let autoScrollDelay = 2500; // delay before starting (ms)
+  let scrollAnimationId = null;
+  let lastTime = 0;
+  const scrollSpeed = 0.5; // pixels per millisecond (slower = smoother)
+
+  // Stop auto-scroll on user interaction
+  function stopAutoScroll() {
+    autoScrollActive = false;
+    if (scrollAnimationId) {
+      cancelAnimationFrame(scrollAnimationId);
+      scrollAnimationId = null;
+    }
+  }
+
+  // Smooth auto-scroll function with consistent speed
+  function autoScroll(currentTime) {
+    if (!autoScrollActive) return;
+
+    if (lastTime === 0) lastTime = currentTime;
+    const delta = currentTime - lastTime;
+    lastTime = currentTime;
+
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+    if (window.scrollY < maxScroll) {
+      window.scrollBy(0, scrollSpeed * delta * 0.03); // Gentle scroll
+      scrollAnimationId = requestAnimationFrame(autoScroll);
+    } else {
+      autoScrollActive = false;
+    }
+  }
+
+  // Start auto-scroll after delay
+  setTimeout(() => {
+    if (autoScrollActive) {
+      scrollAnimationId = requestAnimationFrame(autoScroll);
+    }
+  }, autoScrollDelay);
+
+  // Stop on any user interaction
+  ['mousemove', 'mousedown', 'touchstart', 'touchmove', 'wheel', 'keydown', 'click'].forEach(event => {
+    window.addEventListener(event, stopAutoScroll, { once: true, passive: true });
+  });
+})();
 </script>
 </body>
 

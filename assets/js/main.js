@@ -168,91 +168,135 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
 
+/*=============== TYPING ANIMATION ===============*/
+const typingText = document.getElementById('typing-text');
+const phrases = [
+  'Project Management Specialist',
+  'Sr. Software Engineer',
+  'Team Lead with Full Stack skill set',
+  'IoT / Embedded System Expert',
+  'Cloud & DevOps Engineer'
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 100;
+
+function typeEffect() {
+  const currentPhrase = phrases[phraseIndex];
+
+  if (isDeleting) {
+    typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+    charIndex--;
+    typingSpeed = 50;
+  } else {
+    typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+    charIndex++;
+    typingSpeed = 100;
+  }
+
+  if (!isDeleting && charIndex === currentPhrase.length) {
+    isDeleting = true;
+    typingSpeed = 2000; // Pause at end
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    typingSpeed = 500; // Pause before new word
+  }
+
+  setTimeout(typeEffect, typingSpeed);
+}
+
+// Start typing animation
+if (typingText) {
+  setTimeout(typeEffect, 1000);
+}
+
+/*=============== COUNTER ANIMATION ===============*/
+function animateCounter(element, target, duration = 2000) {
+  let start = 0;
+  const increment = target / (duration / 16);
+
+  function updateCounter() {
+    start += increment;
+    if (start < target) {
+      element.textContent = Math.floor(start);
+      requestAnimationFrame(updateCounter);
+    } else {
+      element.textContent = target;
+    }
+  }
+  updateCounter();
+}
+
+// Observe counters
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = parseInt(entry.target.dataset.target);
+      animateCounter(entry.target, target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.counter').forEach(counter => {
+  counterObserver.observe(counter);
+});
+
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
-  origin: "top",
-  distance: "60px",
-  duration: 2500,
-  delay: 400,
+  origin: "bottom",
+  distance: "30px",
+  duration: 800,
+  delay: 100,
   reset: true,
+  easing: 'ease',
 });
 
-sr.reveal(`.nav__menu`, {
-  delay: 100,
-  scale: 0.1,
-  origin: "bottom",
-  distance: "300px",
-});
+// Home section - gentle staggered entrance
+sr.reveal(`.home__greeting`, { delay: 100, origin: "left", distance: "30px" });
+sr.reveal(`.home__name`, { delay: 200, origin: "left", distance: "30px" });
+sr.reveal(`.typing-container`, { delay: 300, distance: "20px" });
+sr.reveal(`.home__education`, { delay: 400, distance: "20px" });
+sr.reveal(`.home__buttons`, { delay: 500, distance: "20px" });
+sr.reveal(`.home__cv-links`, { delay: 600, distance: "20px" });
+sr.reveal(`.home__handle`, { delay: 200, origin: "right", distance: "40px" });
+sr.reveal(`.home__social`, { delay: 700, distance: "20px" });
+sr.reveal(`.home__scroll`, { delay: 800, distance: "20px" });
 
-sr.reveal(`.home__data`);
-sr.reveal(`.home__handle`, {
-  delay: 100,
-});
+// Section titles
+sr.reveal(`.section__subtitle`, { origin: "top", distance: "15px" });
+sr.reveal(`.section__title`, { origin: "top", distance: "20px", delay: 100 });
 
-sr.reveal(`.home__social, .home__scroll`, {
-  delay: 100,
-  origin: "bottom",
-});
+// About section
+sr.reveal(`.about__img`, { origin: "left", distance: "40px" });
+sr.reveal(`.about__box`, { distance: "30px", interval: 150 });
+sr.reveal(`.about__description`, { origin: "right", distance: "30px", delay: 200 });
+sr.reveal(`.about__button-contact`, { distance: "20px", delay: 300 });
 
-sr.reveal(`.about__img`, {
-  delay: 100,
-  origin: "left",
-  scale: 0.9,
-  distance: "30px",
-});
+// Skills section
+sr.reveal(`.skills__content`, { distance: "40px", interval: 200 });
 
-sr.reveal(`.about__data, .about__description, .about__button-contact`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "right",
-  distance: "30px",
-});
+// Services section
+sr.reveal(`.services__card`, { distance: "40px", interval: 150 });
 
-sr.reveal(`.skills__content`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "bottom",
-  distance: "30px",
-});
+// Work section
+sr.reveal(`.work__filters`, { origin: "top", distance: "20px" });
+sr.reveal(`.work__card`, { distance: "40px", interval: 100 });
 
-sr.reveal(`.services__title, services__button`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "top",
-  distance: "30px",
-});
+// Portfolio/Approach section
+sr.reveal(`.portfolio__card`, { distance: "40px", interval: 200 });
 
-sr.reveal(`.work__card`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "bottom",
-  distance: "30px",
-});
+// Screenshots section
+sr.reveal(`.projectSwiper`, { distance: "50px" });
 
-sr.reveal(`.testimonial__container`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "bottom",
-  distance: "30px",
-});
+// Contact section
+sr.reveal(`.contact__info`, { origin: "left", distance: "40px" });
+sr.reveal(`.contact__form`, { origin: "right", distance: "40px", delay: 150 });
 
-sr.reveal(`.contact__info, .contact__title-info`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "left",
-  distance: "30px",
-});
-
-sr.reveal(`.contact__form, .contact__title-form`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "right",
-  distance: "30px",
-});
-
-sr.reveal(`.footer, footer__container`, {
-  delay: 100,
-  scale: 0.9,
-  origin: "bottom",
-  distance: "30px",
-});
+// Footer
+sr.reveal(`.footer__title`, { origin: "top", distance: "20px" });
+sr.reveal(`.footer__list`, { distance: "20px", delay: 150 });
+sr.reveal(`.footer__social`, { distance: "20px", delay: 200 });
