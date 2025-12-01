@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--=============== PRECONNECT & DNS-PREFETCH ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
     <!--=============== FAVICON ===============-->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
@@ -20,11 +28,10 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
  <style>
   /* Additional custom styles - most styling is in styles.css */
@@ -50,16 +57,19 @@
     </style>
 </head>
 
-<!-- Background Music -->
-<audio id="background-music" loop>
+<!-- Background Music (Lazy Loaded) -->
+<audio id="background-music" loop preload="none">
     <source src="assets/music/music.mp3" type="audio/mp3">
 </audio>
 
 <script>
-    // Play music on first click
+    // Play music on first click (lazy load audio)
     document.addEventListener("click", () => {
         const music = document.getElementById("background-music");
         const musicToggle = document.getElementById("music-toggle");
+        if (music.readyState === 0) {
+            music.load(); // Load audio on first interaction
+        }
         music.play();
         if (musicToggle) {
             musicToggle.classList.remove('bx-volume-mute');
@@ -175,7 +185,7 @@
 
     <!-- Center Image -->
     <div class="home__handle">
-      <img src="assets/img/img.jpeg" alt="M. Hasan" class="home__img2">
+      <img src="assets/img/img.jpeg" alt="M. Hasan" class="home__img2" loading="eager">
     </div>
 
     <!-- Social Links -->
@@ -204,7 +214,7 @@
 
 
   <div class="about__container container grid">
-    <img src="assets/img/about1.jpeg" alt="About Image" class="about__img">
+    <img src="assets/img/about1.jpeg" alt="About Image" class="about__img" loading="lazy">
 
     <div class="about__data">
       <div class="about__info">
@@ -701,122 +711,122 @@
       <div class="swiper-wrapper">
         <!-- iGaming / JackpotX -->
         <div class="swiper-slide">
-          <img src="images/iGaming Project.png" alt="iGaming Project" class="screenshot-img" />
+          <img src="images/iGaming Project.png" alt="iGaming Project" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming Project Documentations.png" alt="iGaming Project Documentations" class="screenshot-img" />
+          <img src="images/iGaming Project Documentations.png" alt="iGaming Project Documentations" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming User.png" alt="iGaming User" class="screenshot-img" />
+          <img src="images/iGaming User.png" alt="iGaming User" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming User Panel.png" alt="iGaming User Panel" class="screenshot-img" />
+          <img src="images/iGaming User Panel.png" alt="iGaming User Panel" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming User Part JackpotX.png" alt="iGaming User Part JackpotX" class="screenshot-img" />
+          <img src="images/iGaming User Part JackpotX.png" alt="iGaming User Part JackpotX" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming -Admin.png" alt="iGaming Admin" class="screenshot-img" />
+          <img src="images/iGaming -Admin.png" alt="iGaming Admin" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming Admin Section.png" alt="iGaming Admin Section" class="screenshot-img" />
+          <img src="images/iGaming Admin Section.png" alt="iGaming Admin Section" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming Admin Part.png" alt="iGaming Admin Part" class="screenshot-img" />
+          <img src="images/iGaming Admin Part.png" alt="iGaming Admin Part" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming Admin Part-2.png" alt="iGaming Admin Part 2" class="screenshot-img" />
+          <img src="images/iGaming Admin Part-2.png" alt="iGaming Admin Part 2" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming Admin Part - 3.png" alt="iGaming Admin Part 3" class="screenshot-img" />
+          <img src="images/iGaming Admin Part - 3.png" alt="iGaming Admin Part 3" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming JackpotX Admin Panel.png" alt="iGaming JackpotX Admin Panel" class="screenshot-img" />
+          <img src="images/iGaming JackpotX Admin Panel.png" alt="iGaming JackpotX Admin Panel" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/iGaming JackpotX Admin - 4.png" alt="iGaming JackpotX Admin 4" class="screenshot-img" />
+          <img src="images/iGaming JackpotX Admin - 4.png" alt="iGaming JackpotX Admin 4" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/CI:CD JackpotX.png" alt="CI/CD JackpotX" class="screenshot-img" />
+          <img src="images/CI:CD JackpotX.png" alt="CI/CD JackpotX" class="screenshot-img" loading="lazy" />
         </div>
 
         <!-- RTS (Real-Time System) -->
         <div class="swiper-slide">
-          <img src="images/GDU RTS.png" alt="GDU RTS" class="screenshot-img" />
+          <img src="images/GDU RTS.png" alt="GDU RTS" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/RTS-WebSocket.png" alt="RTS WebSocket" class="screenshot-img" />
+          <img src="images/RTS-WebSocket.png" alt="RTS WebSocket" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/RTS - User Panel.png" alt="RTS User Panel" class="screenshot-img" />
+          <img src="images/RTS - User Panel.png" alt="RTS User Panel" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/RTS-User Panel.png" alt="RTS User Panel" class="screenshot-img" />
+          <img src="images/RTS-User Panel.png" alt="RTS User Panel" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/RTS-User Panel-1.png" alt="RTS User Panel 1" class="screenshot-img" />
+          <img src="images/RTS-User Panel-1.png" alt="RTS User Panel 1" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/RTS User Panel - 5.png" alt="RTS User Panel 5" class="screenshot-img" />
+          <img src="images/RTS User Panel - 5.png" alt="RTS User Panel 5" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/RTS-Admin control and distribution.png" alt="RTS Admin Control and Distribution" class="screenshot-img" />
+          <img src="images/RTS-Admin control and distribution.png" alt="RTS Admin Control and Distribution" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/RTS Admin control and Distribution - 2.png" alt="RTS Admin Control and Distribution 2" class="screenshot-img" />
+          <img src="images/RTS Admin control and Distribution - 2.png" alt="RTS Admin Control and Distribution 2" class="screenshot-img" loading="lazy" />
         </div>
 
         <!-- LRT -->
         <div class="swiper-slide">
-          <img src="images/LRT EventLog.png" alt="LRT EventLog" class="screenshot-img" />
+          <img src="images/LRT EventLog.png" alt="LRT EventLog" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/LRT-Admin Control and Distribution.png" alt="LRT Admin Control and Distribution" class="screenshot-img" />
+          <img src="images/LRT-Admin Control and Distribution.png" alt="LRT Admin Control and Distribution" class="screenshot-img" loading="lazy" />
         </div>
 
         <!-- IoT -->
         <div class="swiper-slide">
-          <img src="images/IoT.png" alt="IoT" class="screenshot-img" />
+          <img src="images/IoT.png" alt="IoT" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/IoT-2.png" alt="IoT 2" class="screenshot-img" />
+          <img src="images/IoT-2.png" alt="IoT 2" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/IoT-3 datasheet.png" alt="IoT 3 Datasheet" class="screenshot-img" />
+          <img src="images/IoT-3 datasheet.png" alt="IoT 3 Datasheet" class="screenshot-img" loading="lazy" />
         </div>
 
         <!-- Management Systems -->
         <div class="swiper-slide">
-          <img src="images/Hotel ERP Architecture.png" alt="Hotel ERP Architecture" class="screenshot-img" />
+          <img src="images/Hotel ERP Architecture.png" alt="Hotel ERP Architecture" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/Client Management.png" alt="Client Management" class="screenshot-img" />
+          <img src="images/Client Management.png" alt="Client Management" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/Law Office Management.png" alt="Law Office Management" class="screenshot-img" />
+          <img src="images/Law Office Management.png" alt="Law Office Management" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/Doctor Patient Management.png" alt="Doctor Patient Management" class="screenshot-img" />
+          <img src="images/Doctor Patient Management.png" alt="Doctor Patient Management" class="screenshot-img" loading="lazy" />
         </div>
 
         <!-- Other Projects -->
         <div class="swiper-slide">
-          <img src="images/TNG.png" alt="TNG" class="screenshot-img" />
+          <img src="images/TNG.png" alt="TNG" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/Auto QR-Marketing.png" alt="Auto QR Marketing" class="screenshot-img" />
+          <img src="images/Auto QR-Marketing.png" alt="Auto QR Marketing" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/data-center.png" alt="Data Center" class="screenshot-img" />
+          <img src="images/data-center.png" alt="Data Center" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/Forensic Decoding.png" alt="Forensic Decoding" class="screenshot-img" />
+          <img src="images/Forensic Decoding.png" alt="Forensic Decoding" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/Havoc.png" alt="Havoc" class="screenshot-img" />
+          <img src="images/Havoc.png" alt="Havoc" class="screenshot-img" loading="lazy" />
         </div>
         <div class="swiper-slide">
-          <img src="images/Pentesting.png" alt="Pentesting" class="screenshot-img" />
+          <img src="images/Pentesting.png" alt="Pentesting" class="screenshot-img" loading="lazy" />
         </div>
       </div>
 
@@ -974,22 +984,18 @@
     </script>
 
     <!--=============== SCROLLREVEAL ===============-->
-    <!-- <script src="assets/js/scrollreveal.min.js"></script> -->
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js" defer></script>
 
     <!--=============== SWIPER JS ===============-->
-    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
 
     <!--=============== MIXITUP FILTER ===============-->
-    <script src="assets/js/mixitup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js" defer></script>
 
     <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js"></script>
-   <!-- Make sure you include MixItUp -->
+    <script src="assets/js/main.js" defer></script>
 
-<script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
-
-<script>
+<script defer>
   document.addEventListener('DOMContentLoaded', function () {
     // MixItUp filtering
     var mixer = mixitup('.work__container', {
@@ -1037,10 +1043,9 @@
     }
   });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 <!-- Swiper Initialization -->
-<script>
+<script defer>
   document.addEventListener('DOMContentLoaded', function () {
     new Swiper('.projectSwiper', {
       loop: true,
@@ -1207,55 +1212,7 @@
   });
 </script>
 
-<!-- Auto Scroll Feature -->
-<script>
-(function() {
-  let autoScrollActive = true;
-  let autoScrollDelay = 2500; // delay before starting (ms)
-  let scrollAnimationId = null;
-  let lastTime = 0;
-  const scrollSpeed = 0.5; // pixels per millisecond (slower = smoother)
-
-  // Stop auto-scroll on user interaction
-  function stopAutoScroll() {
-    autoScrollActive = false;
-    if (scrollAnimationId) {
-      cancelAnimationFrame(scrollAnimationId);
-      scrollAnimationId = null;
-    }
-  }
-
-  // Smooth auto-scroll function with consistent speed
-  function autoScroll(currentTime) {
-    if (!autoScrollActive) return;
-
-    if (lastTime === 0) lastTime = currentTime;
-    const delta = currentTime - lastTime;
-    lastTime = currentTime;
-
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-
-    if (window.scrollY < maxScroll) {
-      window.scrollBy(0, scrollSpeed * delta * 0.03); // Gentle scroll
-      scrollAnimationId = requestAnimationFrame(autoScroll);
-    } else {
-      autoScrollActive = false;
-    }
-  }
-
-  // Start auto-scroll after delay
-  setTimeout(() => {
-    if (autoScrollActive) {
-      scrollAnimationId = requestAnimationFrame(autoScroll);
-    }
-  }, autoScrollDelay);
-
-  // Stop on any user interaction
-  ['mousemove', 'mousedown', 'touchstart', 'touchmove', 'wheel', 'keydown', 'click'].forEach(event => {
-    window.addEventListener(event, stopAutoScroll, { once: true, passive: true });
-  });
-})();
-</script>
+<!-- Auto Scroll Feature Removed for Performance -->
 </body>
 
 </html>
