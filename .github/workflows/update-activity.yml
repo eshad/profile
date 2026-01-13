@@ -1,0 +1,63 @@
+name: Update GitHub Activity
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - main
+
+jobs:
+  update-activity:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Fetch GitHub Activity
+        run: |
+          # Use GH_ACTIVITY_TOKEN if available (for private repos), otherwise use GITHUB_TOKEN
+          TOKEN="${{ secrets.GH_ACTIVITY_TOKEN }}"
+          if [ -z "$TOKEN" ]; then
+            TOKEN="${{ secrets.GITHUB_TOKEN }}"
+            echo "ℹ️  Using default GITHUB_TOKEN (public repos only)"
+          else
+            echo "✅ Using GH_ACTIVITY_TOKEN (includes private repos)"
+          fi
+          
+          curl -H "Accept: application/vnd.github.v3+json" \
+               -H "Authorization: token $TOKEN" \
+               https://api.github.com/users/eshad/events > activity.json
+          
+          # Verify the file is valid JSON
+          if ! jq empty activity.json 2>/dev/null; then
+            echo "Error: Invalid JSON response"
+            exit 1
+          fi
+          
+          # Check if file has content
+          if [ ! -s activity.json ]; then
+            echo "Error: activity.json is empty"
+            exit 1
+          fi
+          
+          echo "Successfully fetched $(jq length activity.json) events"
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet activity.json || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add activity.json
+          git commit -m "Update GitHub activity data [skip ci]"
+          git push

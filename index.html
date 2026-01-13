@@ -125,6 +125,12 @@
                     </li>
 
                     <li class="nav__item">
+                        <a href="#git-activity" class="nav__link">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
                         <a href="#work" class="nav__link">
                             <i class='bx bx-briefcase-alt-2'></i>
                         </a>
@@ -358,6 +364,82 @@
                 <h4>Security Testing</h4>
                 <p>Penetration Testing, MSF Console, SET Tools</p>
             </div>
+        </div>
+    </div>
+</section>
+
+       <!--=============== GIT ACTIVITY ===============-->
+<section class="git-activity section" id="git-activity">
+    <span class="section__subtitle">GitHub Contributions</span>
+    <h2 class="section__title">Development Activity</h2>
+
+    <!-- Stats Cards -->
+    <div class="git-stats container">
+        <div class="git-stat-card">
+            <i class='bx bx-git-commit'></i>
+            <div class="git-stat-content">
+                <h3 id="total-events">0</h3>
+                <p>Total Events</p>
+            </div>
+        </div>
+        <div class="git-stat-card">
+            <i class='bx bx-git-repo-forked'></i>
+            <div class="git-stat-content">
+                <h3 id="total-repos">0</h3>
+                <p>Active Repositories</p>
+            </div>
+        </div>
+        <div class="git-stat-card">
+            <i class='bx bxs-trophy'></i>
+            <div class="git-stat-content">
+                <h3 id="most-active-repo">-</h3>
+                <p>Most Active Repo</p>
+            </div>
+        </div>
+        <div class="git-stat-card">
+            <i class='bx bx-time-five'></i>
+            <div class="git-stat-content">
+                <h3 id="recent-activity">-</h3>
+                <p>Last Activity</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="git-charts container">
+        <!-- Activity Timeline Chart -->
+        <div class="git-chart-container">
+            <h3 class="git-chart-title"><i class='bx bx-line-chart'></i> Activity Timeline</h3>
+            <div class="chart-wrapper">
+                <canvas id="activityTimelineChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Repository Distribution -->
+        <div class="git-chart-container">
+            <h3 class="git-chart-title"><i class='bx bx-pie-chart-alt-2'></i> Repository Distribution</h3>
+            <div class="chart-wrapper chart-wrapper-small">
+                <canvas id="repoChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Event Types -->
+        <div class="git-chart-container">
+            <h3 class="git-chart-title"><i class='bx bx-bar-chart-alt-2'></i> Event Types</h3>
+            <div class="chart-wrapper chart-wrapper-small">
+                <canvas id="eventTypeChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Timeline List -->
+    <div class="activity-timeline-section container">
+        <h3 class="section__subtitle" style="margin-top: 2rem;">Recent Activity</h3>
+        <h2 class="git-chart-title" style="text-align: center; margin-bottom: 2rem;">
+            <i class='bx bx-git-branch'></i> Latest Commits & Events
+        </h2>
+        <div class="activity-timeline" id="activityTimeline">
+            <!-- Timeline items will be inserted here by JavaScript -->
         </div>
     </div>
 </section>
@@ -992,8 +1074,14 @@
     <!--=============== MIXITUP FILTER ===============-->
     <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js" defer></script>
 
+    <!--=============== CHART.JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js" defer></script>
+    
+    <!--=============== GIT ACTIVITY JS ===============-->
+    <script src="assets/js/git-activity.js" defer></script>
 
 <script defer>
   document.addEventListener('DOMContentLoaded', function () {
