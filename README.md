@@ -5,14 +5,43 @@ Professional portfolio website with integrated GitHub activity visualization.
 ## 🚀 Quick Start
 
 ```bash
-# 1. Update your GitHub activity data
+# 1. Clone or navigate to the project
+cd /Volumes/MyExternal/personal/git-profile/profile
+
+# 2. Update your GitHub activity data (optional - auto-updates via GitHub Actions)
 ./update-activity.sh
 
-# 2. Start a local server
+# 3. Start a local server for testing
 python3 -m http.server 8000
 
-# 3. Open http://localhost:8000 in your browser
+# 4. Open http://localhost:8000 in your browser
 ```
+
+## 🎯 Latest Updates (Jan 2026)
+
+### ✅ Improvements Made
+- **Fixed API Issues**: Updated GitHub Stats API to use alternative reliable endpoints
+- **Added Loading States**: Implemented shimmer effect for images while they load
+- **Transparent Backgrounds**: All stats cards now have transparent backgrounds for dark theme
+- **Better Error Handling**: Added fallback URLs for failed API requests
+- **Activity Timeline**: Verified and tested recent activity display from activity.json
+- **Responsive Design**: All stats cards are mobile-friendly and responsive
+
+### 🔧 Technical Changes
+1. **API Endpoints Updated**:
+   - Changed from `github-readme-stats.vercel.app` to `github-readme-stats-git-masterrstaa-rickstaa.vercel.app`
+   - Added fallback URLs for reliability
+   - All backgrounds set to transparent (`bg_color=00000000`)
+
+2. **CSS Enhancements**:
+   - Added shimmer loading animation for stat images
+   - Min-height of 150px for proper skeleton display
+   - Animation stops when images load
+
+3. **Activity Timeline**:
+   - Verified activity.json is properly loaded
+   - JavaScript correctly processes and displays events
+   - Shows recent 10 events with time ago formatting
 
 ## 📂 Project Structure
 

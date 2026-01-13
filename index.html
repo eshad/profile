@@ -370,78 +370,220 @@
 
        <!--=============== GIT ACTIVITY ===============-->
 <section class="git-activity section" id="git-activity">
-    <span class="section__subtitle">GitHub Contributions</span>
-    <h2 class="section__title">Development Activity</h2>
+    <span class="section__subtitle">GitHub Profile</span>
+    <h2 class="section__title">Development Statistics</h2>
 
-    <!-- Stats Cards -->
-    <div class="git-stats container">
-        <div class="git-stat-card">
-            <i class='bx bx-git-commit'></i>
-            <div class="git-stat-content">
-                <h3 id="total-events">0</h3>
-                <p>Total Events</p>
+
+
+
+    <!-- GitHub Stats Cards -->
+    <div class="github-stats-cards container">
+        <div class="stats-grid">
+            <!-- GitHub Stats -->
+            <div class="stat-card-wrapper">
+                <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=eshad&show_icons=true&count_private=true&include_all_commits=true&theme=radical&hide_border=true&bg_color=00000000&title_color=6366f1&icon_color=34d399&text_color=c9d1d9"
+                     alt="GitHub Stats"
+                     loading="lazy"
+                     class="stat-image"
+                     onerror="this.onerror=null; this.src='https://github-readme-stats-sigma-five.vercel.app/api?username=eshad&show_icons=true&theme=radical';">
             </div>
-        </div>
-        <div class="git-stat-card">
-            <i class='bx bx-git-repo-forked'></i>
-            <div class="git-stat-content">
-                <h3 id="total-repos">0</h3>
-                <p>Active Repositories</p>
+
+            <!-- GitHub Streak -->
+            <div class="stat-card-wrapper">
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=eshad&theme=radical&hide_border=true&background=00000000&ring=6366f1&fire=34d399&currStreakLabel=c9d1d9&sideLabels=c9d1d9"
+                     alt="GitHub Streak"
+                     loading="lazy"
+                     class="stat-image"
+                     onerror="this.src='https://github-readme-streak-stats.herokuapp.com/?user=eshad&theme=radical'">
             </div>
-        </div>
-        <div class="git-stat-card">
-            <i class='bx bxs-trophy'></i>
-            <div class="git-stat-content">
-                <h3 id="most-active-repo">-</h3>
-                <p>Most Active Repo</p>
-            </div>
-        </div>
-        <div class="git-stat-card">
-            <i class='bx bx-time-five'></i>
-            <div class="git-stat-content">
-                <h3 id="recent-activity">-</h3>
-                <p>Last Activity</p>
+
+            <!-- Top Languages -->
+            <div class="stat-card-wrapper">
+                <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=eshad&layout=compact&theme=radical&hide_border=true&bg_color=00000000&title_color=6366f1&text_color=c9d1d9&langs_count=8&hide=html,css"
+                     alt="Top Languages"
+                     loading="lazy"
+                     class="stat-image"
+                     onerror="this.onerror=null; this.src='https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=eshad&layout=compact&theme=radical';">
             </div>
         </div>
     </div>
 
-    <!-- Charts Section -->
-    <div class="git-charts container">
-        <!-- Activity Timeline Chart -->
-        <div class="git-chart-container">
-            <h3 class="git-chart-title"><i class='bx bx-line-chart'></i> Activity Timeline</h3>
-            <div class="chart-wrapper">
-                <canvas id="activityTimelineChart"></canvas>
-            </div>
+    <!-- GitHub Trophies -->
+    <div class="github-trophies container">
+        <div class="trophies-wrapper">
+            <img src="https://github-profile-trophy.vercel.app/?username=eshad&theme=darkhub&no-frame=true&no-bg=true&column=7&margin-w=10&margin-h=10"
+                 alt="GitHub Trophies"
+                 loading="lazy"
+                 class="trophies-image"
+                 onerror="this.style.display='none'">
         </div>
+    </div>
 
-        <!-- Repository Distribution -->
-        <div class="git-chart-container">
-            <h3 class="git-chart-title"><i class='bx bx-pie-chart-alt-2'></i> Repository Distribution</h3>
-            <div class="chart-wrapper chart-wrapper-small">
-                <canvas id="repoChart"></canvas>
+    <!-- Contribution Calendar -->
+    <div class="github-stats-cards container">
+        <div class="stat-card-wrapper full-width contribution-calendar">
+            <div class="contribution-header-stats">
+                <h3 class="contribution-title">
+                    <i class='bx bx-calendar'></i> Contribution Activity
+                </h3>
             </div>
-        </div>
-
-        <!-- Event Types -->
-        <div class="git-chart-container">
-            <h3 class="git-chart-title"><i class='bx bx-bar-chart-alt-2'></i> Event Types</h3>
-            <div class="chart-wrapper chart-wrapper-small">
-                <canvas id="eventTypeChart"></canvas>
+            <div class="github-calendar-wrapper">
+                <img src="https://ghchart.rshah.org/6366f1/eshad"
+                     alt="GitHub Contribution Calendar"
+                     loading="lazy"
+                     class="stat-image"
+                     style="width: 100%; height: auto;">
+            </div>
+            <div class="contribution-legend-info">
+                <span style="font-size: var(--smaller-font-size); color: var(--text-color-light);">
+                    Less <span style="display: inline-flex; gap: 3px; margin: 0 8px;">
+                        <span style="width: 10px; height: 10px; background: #161b22; border: 1px solid #30363d; display: inline-block;"></span>
+                        <span style="width: 10px; height: 10px; background: #0e4429; border: 1px solid #30363d; display: inline-block;"></span>
+                        <span style="width: 10px; height: 10px; background: #006d32; border: 1px solid #30363d; display: inline-block;"></span>
+                        <span style="width: 10px; height: 10px; background: #26a641; border: 1px solid #30363d; display: inline-block;"></span>
+                        <span style="width: 10px; height: 10px; background: #39d353; border: 1px solid #30363d; display: inline-block;"></span>
+                    </span> More
+                </span>
             </div>
         </div>
     </div>
 
-    <!-- Activity Timeline List -->
-    <div class="activity-timeline-section container">
-        <h3 class="section__subtitle" style="margin-top: 2rem;">Recent Activity</h3>
-        <h2 class="git-chart-title" style="text-align: center; margin-bottom: 2rem;">
-            <i class='bx bx-git-branch'></i> Latest Commits & Events
-        </h2>
-        <div class="activity-timeline" id="activityTimeline">
-            <!-- Timeline items will be inserted here by JavaScript -->
+    <!-- Featured Repositories -->
+    <div class="github-stats-cards container">
+        <div class="stat-card-wrapper full-width featured-repos-wrapper">
+            <h3 class="contribution-title">
+                <i class='bx bx-folder-open'></i> Featured Repositories
+            </h3>
+            <div class="repos-grid">
+                <a href="https://github.com/eshad/redmine_dark_mode" target="_blank" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="repo-name">redmine_dark_mode</span>
+                    </div>
+                    <p class="repo-description">Plugin for Redmine Dark Mode Solution</p>
+                    <div class="repo-footer">
+                        <span class="repo-lang"><span class="lang-dot css"></span> CSS</span>
+                        <span class="repo-stats"><i class='bx bx-star'></i> 0</span>
+                    </div>
+                </a>
+                <a href="https://github.com/eshad/custom_mail_redmine_plugin" target="_blank" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="repo-name">custom_mail_redmine_plugin</span>
+                    </div>
+                    <p class="repo-description">Custom plugin for Redmine mail issues</p>
+                    <div class="repo-footer">
+                        <span class="repo-lang"><span class="lang-dot html"></span> HTML</span>
+                        <span class="repo-stats"><i class='bx bx-star'></i> 1</span>
+                    </div>
+                </a>
+                <a href="https://github.com/eshad/Challenge-Your-Math-Skills" target="_blank" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="repo-name">Challenge-Your-Math-Skills</span>
+                    </div>
+                    <p class="repo-description">AI-powered math practice for students</p>
+                    <div class="repo-footer">
+                        <span class="repo-lang"><span class="lang-dot typescript"></span> TypeScript</span>
+                        <span class="repo-stats"><i class='bx bx-star'></i> 0</span>
+                    </div>
+                </a>
+                <a href="https://github.com/eshad/gdu-mimic" target="_blank" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="repo-name">gdu-mimic</span>
+                    </div>
+                    <p class="repo-description">Mediamtx live stream solution for GDU</p>
+                    <div class="repo-footer">
+                        <span class="repo-lang"><span class="lang-dot html"></span> HTML</span>
+                        <span class="repo-stats"><i class='bx bx-star'></i> 0</span>
+                    </div>
+                </a>
+                <a href="https://github.com/eshad/timer" target="_blank" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="repo-name">timer</span>
+                    </div>
+                    <p class="repo-description">Safari extension for time tracking</p>
+                    <div class="repo-footer">
+                        <span class="repo-lang"><span class="lang-dot swift"></span> Swift</span>
+                        <span class="repo-stats"><i class='bx bx-star'></i> 0</span>
+                    </div>
+                </a>
+                <a href="https://github.com/eshad/highlighter" target="_blank" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="repo-name">highlighter</span>
+                    </div>
+                    <p class="repo-description">Safari extension for highlighting</p>
+                    <div class="repo-footer">
+                        <span class="repo-lang"><span class="lang-dot javascript"></span> JavaScript</span>
+                        <span class="repo-stats"><i class='bx bx-star'></i> 0</span>
+                    </div>
+                </a>
+                <a href="https://github.com/eshad/syncFiles" target="_blank" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="repo-name">syncFiles</span>
+                    </div>
+                    <p class="repo-description">Sync files between Linux and Windows</p>
+                    <div class="repo-footer">
+                        <span class="repo-lang"><span class="lang-dot javascript"></span> JavaScript</span>
+                        <span class="repo-stats"><i class='bx bx-star'></i> 0</span>
+                    </div>
+                </a>
+                <a href="https://github.com/eshad/gdu-deployer" target="_blank" class="repo-card">
+                    <div class="repo-card-header">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="repo-name">gdu-deployer</span>
+                    </div>
+                    <p class="repo-description">Automation tools for GDU deployment</p>
+                    <div class="repo-footer">
+                        <span class="repo-lang"><span class="lang-dot javascript"></span> JavaScript</span>
+                        <span class="repo-stats"><i class='bx bx-star'></i> 0</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
+
+    <!-- Activity Graph -->
+    <div class="github-stats-cards container">
+        <div class="stat-card-wrapper full-width">
+            <img src="https://github-readme-activity-graph.vercel.app/graph?username=eshad&theme=tokyo-night&hide_border=true&bg_color=00000000&color=6366f1&line=34d399&point=c9d1d9"
+                 alt="Activity Graph"
+                 loading="lazy"
+                 class="stat-image"
+                 onerror="this.src='https://github-readme-activity-graph.vercel.app/graph?username=eshad&theme=tokyo-night'">
+        </div>
+    </div>
+
+    <!-- Badges & Profile Views -->
+    <div class="github-footer container">
+        <div class="github-badges-inline">
+            <a href='https://archiveprogram.github.com/' target="_blank" class="badge-link-small" title="Arctic Code Vault Contributor">
+                <img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/acbadge.gif' alt='Arctic Code Vault'>
+            </a>
+            <a href='https://docs.github.com/en/developers' target="_blank" class="badge-link-small" title="GitHub Developer Program">
+                <img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/devbadge.gif' alt='Developer Program'>
+            </a>
+            <a href='https://github.com/pricing' target="_blank" class="badge-link-small" title="GitHub Pro">
+                <img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/pro.gif' alt='GitHub Pro'>
+            </a>
+            <a href='https://stars.github.com/' target="_blank" class="badge-link-small" title="GitHub Stars">
+                <img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/starbadge.gif' alt='GitHub Stars'>
+            </a>
+            <a href='https://docs.github.com/en/github/supporting-the-open-source-community-with-github-sponsors' target="_blank" class="badge-link-small" title="GitHub Sponsor">
+                <img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/sponsorbadge.gif' alt='Sponsor'>
+            </a>
+        </div>
+        <div class="profile-views">
+            <img src="https://komarev.com/ghpvc/?username=eshad&color=6366f1&style=for-the-badge&label=PROFILE+VIEWS"
+                 alt="Profile Views"
+                 loading="lazy">
+        </div>
+    </div>
+
 </section>
 
        <!--=============== SERVICES ===============-->
@@ -1082,6 +1224,9 @@
     
     <!--=============== GIT ACTIVITY JS ===============-->
     <script src="assets/js/git-activity.js" defer></script>
+    
+    <!--=============== GITHUB STATS JS ===============-->
+    <script src="assets/js/github-stats.js" defer></script>
 
 <script defer>
   document.addEventListener('DOMContentLoaded', function () {

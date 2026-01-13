@@ -1813,17 +1813,17 @@ body.light-theme {
 /* Stats Cards */
 .git-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .git-stat-card {
   background: var(--gradient-card);
   background-color: var(--card-color);
   border: 1px solid var(--border-color);
-  border-radius: 1rem;
-  padding: 1.5rem;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -1832,24 +1832,24 @@ body.light-theme {
 
 .git-stat-card:hover {
   border-color: var(--primary-color);
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
 }
 
 .git-stat-card i {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--primary-color);
 }
 
 .git-stat-content h3 {
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
   color: var(--title-color);
   margin-bottom: 0.25rem;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semibold);
 }
 
 .git-stat-content p {
-  font-size: var(--small-font-size);
+  font-size: var(--smaller-font-size);
   color: var(--text-color-light);
   margin: 0;
 }
@@ -1898,136 +1898,6 @@ body.light-theme {
 
 .chart-wrapper-small {
   height: 350px;
-}
-
-/* Activity Timeline */
-.activity-timeline-section {
-  margin-top: 3rem;
-}
-
-.activity-timeline {
-  position: relative;
-  padding-left: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.activity-timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--gradient-primary);
-}
-
-.timeline-item {
-  position: relative;
-  padding-bottom: 2rem;
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.timeline-item.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.timeline-marker {
-  position: absolute;
-  left: -2rem;
-  top: 0.5rem;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--primary-color);
-  border: 3px solid var(--card-color);
-  box-shadow: 0 0 0 3px var(--primary-color-light);
-  z-index: 1;
-}
-
-.timeline-content {
-  background: var(--gradient-card);
-  background-color: var(--card-color);
-  border: 1px solid var(--border-color);
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-  margin-left: 1rem;
-  transition: var(--transition-normal);
-}
-
-.timeline-content:hover {
-  border-color: var(--primary-color);
-  transform: translateX(5px);
-  box-shadow: var(--shadow-md);
-}
-
-.timeline-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.timeline-event-type {
-  display: inline-block;
-  background: var(--gradient-primary);
-  color: var(--title-color);
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: var(--smaller-font-size);
-  font-weight: var(--font-medium);
-}
-
-.timeline-date {
-  font-size: var(--smaller-font-size);
-  color: var(--text-color-light);
-}
-
-.timeline-repo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--small-font-size);
-  color: var(--text-color);
-}
-
-.timeline-repo i {
-  font-size: 1.25rem;
-  color: var(--primary-color);
-}
-
-.timeline-repo a {
-  color: var(--accent-color);
-  transition: var(--transition-fast);
-}
-
-.timeline-repo a:hover {
-  color: var(--primary-color);
-  text-decoration: underline;
-}
-
-/* Private Project Badge */
-.timeline-private-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  background-color: rgba(251, 146, 60, 0.2);
-  color: rgba(251, 146, 60, 1);
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.5rem;
-  font-size: var(--smaller-font-size);
-  font-weight: var(--font-medium);
-  margin-left: 0.5rem;
-  border: 1px solid rgba(251, 146, 60, 0.3);
-}
-
-.timeline-private-badge i {
-  font-size: 0.875rem;
 }
 
 /* Responsive Design for Git Activity */
@@ -2108,5 +1978,620 @@ body.light-theme {
 
   .git-charts .git-chart-container:first-child {
     grid-column: 1 / -1;
+  }
+}
+
+/*=============== GITHUB CONTRIBUTION GRAPH ===============*/
+.contribution-section {
+  margin-top: 2rem;
+}
+
+.contribution-header {
+  margin-bottom: 0.75rem;
+}
+
+.contribution-graph-card {
+  background: var(--gradient-card);
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: var(--transition-normal);
+}
+
+.contribution-graph-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.contribution-graph-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.contribution-months {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0.5rem;
+  padding-left: 50px;
+}
+
+.month-label {
+  flex: 1;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  text-align: left;
+  min-width: 52px;
+}
+
+.contribution-grid-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.contribution-days {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  height: 105px;
+  padding-top: 10px;
+}
+
+.day-label {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  height: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.contribution-grid {
+  display: flex;
+  gap: 3px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.contribution-week {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contribution-day {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.contribution-day:hover {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+}
+
+.contribution-day.level-0 {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.contribution-day.level-1 {
+  background-color: rgba(52, 211, 153, 0.3);
+}
+
+.contribution-day.level-2 {
+  background-color: rgba(52, 211, 153, 0.5);
+}
+
+.contribution-day.level-3 {
+  background-color: rgba(52, 211, 153, 0.7);
+}
+
+.contribution-day.level-4 {
+  background-color: rgba(52, 211, 153, 1);
+}
+
+.contribution-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.legend-colors {
+  display: flex;
+  gap: 3px;
+}
+
+.legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* Light theme adjustments */
+.light-theme .contribution-day.level-0 {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/*=============== STREAK STATS ===============*/
+.streak-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.streak-card {
+  background: var(--gradient-card);
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition-normal);
+}
+
+.streak-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.streak-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.streak-content h3 {
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  margin-bottom: 0.25rem;
+  font-weight: var(--font-semibold);
+}
+
+.streak-content p {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  margin: 0;
+}
+
+/*=============== GITHUB STATS CARDS ===============*/
+.github-stats-cards {
+  margin-top: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card-wrapper {
+  background: var(--gradient-card);
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.stat-card-wrapper:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card-wrapper.full-width {
+  grid-column: 1 / -1;
+}
+
+.stat-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  min-height: 150px;
+}
+
+.stat-image[src] {
+  animation: none;
+  background: transparent;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/*=============== GITHUB BADGES ===============*/
+.github-badges {
+  margin-top: 2rem;
+}
+
+.badges-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.badge-link {
+  display: block;
+  transition: var(--transition-normal);
+}
+
+.badge-link:hover {
+  transform: scale(1.08) translateY(-3px);
+}
+
+.badge-link img {
+  display: block;
+  width: 65px;
+  height: 65px;
+}
+
+/*=============== GITHUB TROPHIES ===============*/
+.github-trophies {
+  margin: 2rem 0;
+}
+
+.trophies-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.trophies-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== FEATURED REPOSITORIES ===============*/
+.featured-repos-wrapper {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.5rem !important;
+}
+
+.repos-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.repos-grid::-webkit-scrollbar {
+  height: 4px;
+}
+
+.repos-grid::-webkit-scrollbar-track {
+  background: var(--border-color);
+  border-radius: 2px;
+}
+
+.repos-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--body-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  transition: var(--transition-normal);
+  text-decoration: none;
+  width: 180px;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.repo-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.repo-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.repo-card-header i {
+  color: var(--text-color-light);
+  font-size: 1rem;
+}
+
+.repo-name {
+  color: var(--primary-color);
+  font-weight: var(--font-medium);
+  font-size: var(--small-font-size);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.repo-description {
+  color: var(--text-color-light);
+  font-size: var(--smaller-font-size);
+  line-height: 1.4;
+  flex-grow: 1;
+  margin-bottom: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.repo-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.repo-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.lang-dot.css { background-color: #563d7c; }
+.lang-dot.ruby { background-color: #701516; }
+.lang-dot.javascript { background-color: #f1e05a; }
+.lang-dot.python { background-color: #3572A5; }
+.lang-dot.java { background-color: #b07219; }
+.lang-dot.php { background-color: #4F5D95; }
+.lang-dot.typescript { background-color: #3178c6; }
+.lang-dot.html { background-color: #e34c26; }
+.lang-dot.swift { background-color: #F05138; }
+.lang-dot.shell { background-color: #89e051; }
+
+.repo-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.repo-stats i {
+  font-size: 0.75rem;
+}
+
+/*=============== GITHUB FOOTER (BADGES + VIEWS) ===============*/
+.github-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem 0;
+}
+
+.github-badges-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.badge-link-small {
+  display: block;
+  transition: var(--transition-normal);
+}
+
+.badge-link-small:hover {
+  transform: scale(1.1) translateY(-2px);
+}
+
+.badge-link-small img {
+  width: 45px;
+  height: 45px;
+  display: block;
+}
+
+.profile-views {
+  margin-top: 0.5rem;
+}
+
+.profile-views img {
+  display: block;
+}
+
+/*=============== CONTRIBUTION CALENDAR (NEW) ===============*/
+.contribution-calendar {
+  background: var(--gradient-card);
+  background-color: var(--card-color) !important;
+  border: 1px solid var(--border-color);
+  padding: 1.5rem !important;
+}
+
+.contribution-calendar img {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.github-calendar-wrapper {
+  background: #0d1117;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  border: 1px solid #21262d;
+  overflow: hidden;
+}
+
+.github-calendar-wrapper .calendar {
+  background: #0d1117;
+}
+
+.github-calendar-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  /* Make the chart background match GitHub dark theme */
+  mix-blend-mode: lighten;
+  opacity: 0.95;
+}
+
+.contribution-header-stats {
+  margin-bottom: 1rem;
+}
+
+.contribution-title {
+  font-size: var(--h3-font-size);
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: var(--font-semibold);
+}
+
+.contribution-title i {
+  font-size: 1.5rem;
+}
+
+.contribution-subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  margin: 0;
+}
+
+.contribution-grid {
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.contribution-legend-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/*=============== RESPONSIVE - CONTRIBUTION GRAPH ===============*/
+@media screen and (max-width: 768px) {
+  .contribution-graph-card {
+    padding: 1rem;
+  }
+  
+  .contribution-calendar {
+    padding: 1rem !important;
+  }
+  
+  .contribution-title {
+    font-size: var(--normal-font-size);
+  }
+
+  .contribution-months {
+    padding-left: 40px;
+  }
+
+  .month-label {
+    font-size: 0.65rem;
+    min-width: 40px;
+  }
+
+  .contribution-days {
+    height: 90px;
+  }
+
+  .day-label {
+    font-size: 0.65rem;
+    height: 12px;
+  }
+
+  .contribution-day {
+    width: 10px;
+    height: 10px;
+  }
+
+  .legend-box {
+    width: 10px;
+    height: 10px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .badges-grid {
+    gap: 1rem;
+  }
+
+  .badge-link img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* GitHub Trophies Responsive */
+  .trophies-wrapper {
+    padding: 0.5rem;
+  }
+
+  .trophies-image {
+    min-width: 600px;
+  }
+
+  /* Featured Repos Responsive */
+  .repo-card {
+    width: 160px;
+    min-width: 160px;
+  }
+
+  /* GitHub Footer Responsive */
+  .badge-link-small img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contribution-graph-wrapper {
+    overflow-x: scroll;
+  }
+
+  .contribution-day {
+    width: 8px;
+    height: 8px;
+  }
+
+  .streak-stats {
+    grid-template-columns: 1fr;
   }
 }

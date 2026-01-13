@@ -1,36 +1,40 @@
 #!/bin/bash
 
 # Update GitHub Activity Script
-# This script fetches your latest GitHub activity and updates activity.json
+# Fetches comprehensive GitHub data for better statistics
 
-echo "🔄 Fetching GitHub activity for user: eshad"
+USERNAME="eshad"
 
-# Fetch the activity data
-curl -H "Accept: application/vnd.github.v3+json" \
-     https://api.github.com/users/eshad/events > activity.json
+echo "🔄 Fetching comprehensive GitHub data for user: $USERNAME"
 
-# Check if the request was successful
-if [ $? -eq 0 ]; then
-    # Verify it's valid JSON
-    if jq empty activity.json 2>/dev/null; then
-        EVENT_COUNT=$(jq length activity.json)
-        echo "✅ Successfully fetched $EVENT_COUNT events"
-        echo "📄 Activity data saved to activity.json"
-        
-        # Optional: Copy to profile directory for local testing
-        if [ -d "profile" ]; then
-            cp activity.json profile/activity.json
-            echo "📋 Copied to profile/activity.json"
-        fi
-    else
-        echo "❌ Error: Invalid JSON response"
-        exit 1
-    fi
+# Fetch recent events (up to 100)
+echo "📊 Fetching recent events..."
+curl -s -H "Accept: application/vnd.github.v3+json" \
+     "https://api.github.com/users/$USERNAME/events?per_page=100" > activity.json
+
+# Fetch user stats
+echo "📈 Fetching user statistics..."
+curl -s "https://api.github.com/users/$USERNAME" > user_stats.json
+
+# Fetch repositories  
+echo "📦 Fetching repositories..."
+curl -s "https://api.github.com/users/$USERNAME/repos?per_page=100&sort=updated" > repos.json
+
+# Validate
+if [ -f activity.json ] && jq empty activity.json 2>/dev/null; then
+    EVENT_COUNT=$(jq length activity.json 2>/dev/null || echo '0')
+    REPO_COUNT=$(jq length repos.json 2>/dev/null || echo '0')
+    
+    echo ""
+    echo "✅ Data fetched successfully!"
+    echo "   📊 Events: $EVENT_COUNT"
+    echo "   📦 Repos: $REPO_COUNT"
+    echo "   📄 Saved to: activity.json, user_stats.json, repos.json"
 else
-    echo "❌ Error: Failed to fetch activity data"
+    echo "❌ Error: Failed to fetch data"
     exit 1
 fi
 
 echo ""
-echo "💡 Tip: To include private repository events, create a Personal Access Token"
-echo "   and use: curl -H 'Authorization: token YOUR_TOKEN' ..."
+echo "💡 Tip: For private repos, use token:"
+echo "   curl -H 'Authorization: token YOUR_TOKEN' ..."
