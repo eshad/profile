@@ -1,5 +1,134 @@
 [
   {
+    "id": "7543692913",
+    "type": "ReleaseEvent",
+    "actor": {
+      "id": 4688406,
+      "login": "eshad",
+      "display_login": "eshad",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/eshad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
+    },
+    "repo": {
+      "id": 1172567488,
+      "name": "eshad/macscp",
+      "url": "https://api.github.com/repos/eshad/macscp"
+    },
+    "payload": {
+      "action": "published",
+      "release": {
+        "url": "https://api.github.com/repos/eshad/macscp/releases/298760285",
+        "assets_url": "https://api.github.com/repos/eshad/macscp/releases/298760285/assets",
+        "upload_url": "https://uploads.github.com/repos/eshad/macscp/releases/298760285/assets{?name,label}",
+        "html_url": "https://github.com/eshad/macscp/releases/tag/v1.0.0",
+        "id": 298760285,
+        "author": {
+          "login": "eshad",
+          "id": 4688406,
+          "node_id": "MDQ6VXNlcjQ2ODg0MDY=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4688406?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/eshad",
+          "html_url": "https://github.com/eshad",
+          "followers_url": "https://api.github.com/users/eshad/followers",
+          "following_url": "https://api.github.com/users/eshad/following{/other_user}",
+          "gists_url": "https://api.github.com/users/eshad/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/eshad/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/eshad/subscriptions",
+          "organizations_url": "https://api.github.com/users/eshad/orgs",
+          "repos_url": "https://api.github.com/users/eshad/repos",
+          "events_url": "https://api.github.com/users/eshad/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/eshad/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "node_id": "RE_kwDOReP1wM4Rzrhd",
+        "tag_name": "v1.0.0",
+        "target_commitish": "main",
+        "name": "MacSCP v1.0.0",
+        "draft": false,
+        "immutable": false,
+        "prerelease": false,
+        "created_at": "2026-03-19T02:42:51Z",
+        "updated_at": "2026-03-19T02:49:31Z",
+        "published_at": "2026-03-19T02:49:31Z",
+        "assets": [
+          {
+            "url": "https://api.github.com/repos/eshad/macscp/releases/assets/376877107",
+            "id": 376877107,
+            "node_id": "RA_kwDOReP1wM4WdrAz",
+            "name": "MacSCP.dmg",
+            "label": "",
+            "uploader": {
+              "login": "eshad",
+              "id": 4688406,
+              "node_id": "MDQ6VXNlcjQ2ODg0MDY=",
+              "avatar_url": "https://avatars.githubusercontent.com/u/4688406?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/eshad",
+              "html_url": "https://github.com/eshad",
+              "followers_url": "https://api.github.com/users/eshad/followers",
+              "following_url": "https://api.github.com/users/eshad/following{/other_user}",
+              "gists_url": "https://api.github.com/users/eshad/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/eshad/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/eshad/subscriptions",
+              "organizations_url": "https://api.github.com/users/eshad/orgs",
+              "repos_url": "https://api.github.com/users/eshad/repos",
+              "events_url": "https://api.github.com/users/eshad/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/eshad/received_events",
+              "type": "User",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "content_type": "application/x-apple-diskimage",
+            "state": "uploaded",
+            "size": 2605453,
+            "digest": "sha256:113679117324ff0622151055d9c38aac98b0e89d19c8240b757c54fdedd14872",
+            "download_count": 0,
+            "created_at": "2026-03-19T02:49:29Z",
+            "updated_at": "2026-03-19T02:49:30Z",
+            "browser_download_url": "https://github.com/eshad/macscp/releases/download/v1.0.0/MacSCP.dmg"
+          }
+        ],
+        "tarball_url": "https://api.github.com/repos/eshad/macscp/tarball/v1.0.0",
+        "zipball_url": "https://api.github.com/repos/eshad/macscp/zipball/v1.0.0",
+        "body": "## MacSCP v1.0.0\n\nA native macOS SCP/SSH file transfer app with dual-pane file browser.\n\n### Features\n- Dual-pane local/remote file browser\n- SSH key and password authentication\n- Keychain storage for saved connection passwords\n- File upload/download via rsync with sudo support\n- Directory transfer support\n- Multi-file drag-and-drop between panels\n- Copy/paste files between local and remote (Cmd+C/V)\n- Inline rename, new folder creation\n- Type-to-select and search/filter files\n- File watcher for auto-uploading edited remote files\n- Path bar with autocomplete\n- Multi-tab connections\n\n### Install\nDownload `MacSCP.dmg`, open it, and drag MacSCP to your Applications folder.",
+        "short_description_html": "<h2>MacSCP v1.0.0</h2>\n<p>A native macOS SCP/SSH file transfer app with dual-pane file browser.</p>\n<h3>Features</h3>\n<ul>\n<li>Dual-pane local/remote file browser</li>\n<li>SSH key and password authentication</li>\n<li>Keychain storage for saved conn…</li>\n</ul>",
+        "is_short_description_html_truncated": true
+      }
+    },
+    "public": true,
+    "created_at": "2026-03-19T02:49:31Z"
+  },
+  {
+    "id": "9565915230",
+    "type": "PushEvent",
+    "actor": {
+      "id": 4688406,
+      "login": "eshad",
+      "display_login": "eshad",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/eshad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
+    },
+    "repo": {
+      "id": 1172567488,
+      "name": "eshad/macscp",
+      "url": "https://api.github.com/repos/eshad/macscp"
+    },
+    "payload": {
+      "repository_id": 1172567488,
+      "push_id": 31859245349,
+      "ref": "refs/heads/main",
+      "head": "28119fdc0e3bfb20aa729716ecdc2b95ec4f673a",
+      "before": "4e3f002103c127aabaf73b530462f558d568496a"
+    },
+    "public": true,
+    "created_at": "2026-03-19T02:42:58Z"
+  },
+  {
     "id": "9160437928",
     "type": "PushEvent",
     "actor": {
@@ -727,57 +856,5 @@
     },
     "public": true,
     "created_at": "2026-03-07T13:49:12Z"
-  },
-  {
-    "id": "9140256303",
-    "type": "PushEvent",
-    "actor": {
-      "id": 4688406,
-      "login": "eshad",
-      "display_login": "eshad",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/eshad",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
-    },
-    "repo": {
-      "id": 1175269975,
-      "name": "eshad/kafkatui",
-      "url": "https://api.github.com/repos/eshad/kafkatui"
-    },
-    "payload": {
-      "repository_id": 1175269975,
-      "push_id": 31433961058,
-      "ref": "refs/heads/main",
-      "head": "6b803bea72f507a2dfc850532e69ae358f92fac9",
-      "before": "97cb7afe6e2837ed019b5bed1dcb958dfb5af8fd"
-    },
-    "public": true,
-    "created_at": "2026-03-07T13:46:14Z"
-  },
-  {
-    "id": "9140206391",
-    "type": "PushEvent",
-    "actor": {
-      "id": 4688406,
-      "login": "eshad",
-      "display_login": "eshad",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/eshad",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
-    },
-    "repo": {
-      "id": 1175269975,
-      "name": "eshad/kafkatui",
-      "url": "https://api.github.com/repos/eshad/kafkatui"
-    },
-    "payload": {
-      "repository_id": 1175269975,
-      "push_id": 31433910982,
-      "ref": "refs/heads/main",
-      "head": "97cb7afe6e2837ed019b5bed1dcb958dfb5af8fd",
-      "before": "c30cfdba4e32c90f66a133777c0a99b246e82b3e"
-    },
-    "public": true,
-    "created_at": "2026-03-07T13:43:04Z"
   }
 ]
