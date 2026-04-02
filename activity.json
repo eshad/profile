@@ -12,8 +12,8 @@
     },
     "repo": {
       "id": 1197021090,
-      "name": "instructkr/claw-code",
-      "url": "https://api.github.com/repos/instructkr/claw-code"
+      "name": "ultraworkers/claw-code",
+      "url": "https://api.github.com/repos/ultraworkers/claw-code"
     },
     "payload": {
       "action": "forked",
@@ -85,7 +85,7 @@
         "releases_url": "https://api.github.com/repos/eshad/claw-code/releases{/id}",
         "deployments_url": "https://api.github.com/repos/eshad/claw-code/deployments",
         "created_at": "2026-03-31T23:16:27Z",
-        "updated_at": "2026-03-31T23:16:27Z",
+        "updated_at": "2026-04-02T00:45:37Z",
         "pushed_at": "2026-03-31T23:15:21Z",
         "git_url": "git://github.com/eshad/claw-code.git",
         "ssh_url": "git@github.com:eshad/claw-code.git",
@@ -126,11 +126,11 @@
     "public": true,
     "created_at": "2026-03-31T23:16:27Z",
     "org": {
-      "id": 164172344,
-      "login": "instructkr",
+      "id": 272961631,
+      "login": "ultraworkers",
       "gravatar_id": "",
-      "url": "https://api.github.com/orgs/instructkr",
-      "avatar_url": "https://avatars.githubusercontent.com/u/164172344?"
+      "url": "https://api.github.com/orgs/ultraworkers",
+      "avatar_url": "https://avatars.githubusercontent.com/u/272961631?"
     }
   },
   {
@@ -146,8 +146,8 @@
     },
     "repo": {
       "id": 1197021090,
-      "name": "instructkr/claw-code",
-      "url": "https://api.github.com/repos/instructkr/claw-code"
+      "name": "ultraworkers/claw-code",
+      "url": "https://api.github.com/repos/ultraworkers/claw-code"
     },
     "payload": {
       "action": "started"
@@ -155,11 +155,11 @@
     "public": true,
     "created_at": "2026-03-31T23:16:21Z",
     "org": {
-      "id": 164172344,
-      "login": "instructkr",
+      "id": 272961631,
+      "login": "ultraworkers",
       "gravatar_id": "",
-      "url": "https://api.github.com/orgs/instructkr",
-      "avatar_url": "https://avatars.githubusercontent.com/u/164172344?"
+      "url": "https://api.github.com/orgs/ultraworkers",
+      "avatar_url": "https://avatars.githubusercontent.com/u/272961631?"
     }
   },
   {
