@@ -989,58 +989,5 @@
     },
     "public": true,
     "created_at": "2026-03-25T03:27:50Z"
-  },
-  {
-    "id": "9699508844",
-    "type": "PushEvent",
-    "actor": {
-      "id": 4688406,
-      "login": "eshad",
-      "display_login": "eshad",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/eshad",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
-    },
-    "repo": {
-      "id": 1189340651,
-      "name": "eshad/supercharge-build-challenge",
-      "url": "https://api.github.com/repos/eshad/supercharge-build-challenge"
-    },
-    "payload": {
-      "repository_id": 1189340651,
-      "push_id": 31992919703,
-      "ref": "refs/heads/main",
-      "head": "0e7d33176cadcec21e0a4cff3314a24f215086aa",
-      "before": "c78fc3b81f82475df15364ffc875a4279fcfa3bb"
-    },
-    "public": true,
-    "created_at": "2026-03-23T08:22:31Z"
-  },
-  {
-    "id": "9699237816",
-    "type": "CreateEvent",
-    "actor": {
-      "id": 4688406,
-      "login": "eshad",
-      "display_login": "eshad",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/eshad",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
-    },
-    "repo": {
-      "id": 1189340651,
-      "name": "eshad/supercharge-build-challenge",
-      "url": "https://api.github.com/repos/eshad/supercharge-build-challenge"
-    },
-    "payload": {
-      "ref": "main",
-      "ref_type": "branch",
-      "full_ref": "refs/heads/main",
-      "master_branch": "main",
-      "description": "SuperCharge SG Build Challenge 2026 — Telegram RAG Chatbot, Smart Energy Dashboard, AGV Brain Proposal",
-      "pusher_type": "user"
-    },
-    "public": true,
-    "created_at": "2026-03-23T08:13:25Z"
   }
 ]
