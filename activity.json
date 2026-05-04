@@ -432,57 +432,5 @@
     },
     "public": true,
     "created_at": "2026-04-08T16:14:09Z"
-  },
-  {
-    "id": "10179231520",
-    "type": "PushEvent",
-    "actor": {
-      "id": 4688406,
-      "login": "eshad",
-      "display_login": "eshad",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/eshad",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
-    },
-    "repo": {
-      "id": 1186430329,
-      "name": "eshad/macscp",
-      "url": "https://api.github.com/repos/eshad/macscp"
-    },
-    "payload": {
-      "repository_id": 1186430329,
-      "push_id": 32472311921,
-      "ref": "refs/heads/main",
-      "head": "7c4ac20da8fcb76e90bf88d3e0fa8da67cc15ed4",
-      "before": "0e5ea64c1af71041e3d5079a9ffa29784ce4a50d"
-    },
-    "public": true,
-    "created_at": "2026-04-04T03:54:51Z"
-  },
-  {
-    "id": "10179223734",
-    "type": "PushEvent",
-    "actor": {
-      "id": 4688406,
-      "login": "eshad",
-      "display_login": "eshad",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/eshad",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
-    },
-    "repo": {
-      "id": 1186430329,
-      "name": "eshad/macscp",
-      "url": "https://api.github.com/repos/eshad/macscp"
-    },
-    "payload": {
-      "repository_id": 1186430329,
-      "push_id": 32472304074,
-      "ref": "refs/heads/main",
-      "head": "0e5ea64c1af71041e3d5079a9ffa29784ce4a50d",
-      "before": "e8ff649ccb0b43f210f236f00b402730162470b9"
-    },
-    "public": true,
-    "created_at": "2026-04-04T03:54:19Z"
   }
 ]
