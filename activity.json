@@ -993,53 +993,5 @@
       "url": "https://api.github.com/orgs/codeforreal1",
       "avatar_url": "https://avatars.githubusercontent.com/u/112261845?"
     }
-  },
-  {
-    "id": "12576512293",
-    "type": "PushEvent",
-    "actor": {
-      "id": 4688406,
-      "login": "eshad",
-      "display_login": "eshad",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/eshad",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
-    },
-    "repo": {
-      "id": 930160369,
-      "name": "eshad/profile",
-      "url": "https://api.github.com/repos/eshad/profile"
-    },
-    "payload": {
-      "repository_id": 930160369,
-      "push_id": 34866102585,
-      "ref": "refs/heads/main",
-      "head": "9bf855351f83b0f3aff6c6f08b1aedf5ac12b8f1",
-      "before": "c9db2ce43f89fdd9c78297082b32ee068328ae22"
-    },
-    "public": true,
-    "created_at": "2026-05-30T08:00:17Z"
-  },
-  {
-    "id": "10078283217",
-    "type": "WatchEvent",
-    "actor": {
-      "id": 4688406,
-      "login": "eshad",
-      "display_login": "eshad",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/eshad",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
-    },
-    "repo": {
-      "id": 930160369,
-      "name": "eshad/profile",
-      "url": "https://api.github.com/repos/eshad/profile"
-    },
-    "payload": {
-      "action": "started"
-    },
-    "public": true,
-    "created_at": "2026-05-30T07:05:06Z"
   }
 ]
