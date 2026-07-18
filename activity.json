@@ -1,5 +1,211 @@
 [
   {
+    "id": "11966096888",
+    "type": "PullRequestEvent",
+    "actor": {
+      "id": 4688406,
+      "login": "eshad",
+      "display_login": "eshad",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/eshad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
+    },
+    "repo": {
+      "id": 753274513,
+      "name": "Julien-cpsn/ATAC",
+      "url": "https://api.github.com/repos/Julien-cpsn/ATAC"
+    },
+    "payload": {
+      "action": "opened",
+      "number": 211,
+      "pull_request": {
+        "url": "https://api.github.com/repos/Julien-cpsn/ATAC/pulls/211",
+        "id": 4082249971,
+        "number": 211,
+        "head": {
+          "ref": "feat/query-http-method",
+          "sha": "0cd9bb8b4c102d374e5045e09bbbe2a1a3de98df",
+          "repo": {
+            "id": 1304877994,
+            "url": "https://api.github.com/repos/eshad/ATAC",
+            "name": "ATAC"
+          }
+        },
+        "base": {
+          "ref": "main",
+          "sha": "48c94c0cfc089358cfea37a8e272663f32414d9a",
+          "repo": {
+            "id": 753274513,
+            "url": "https://api.github.com/repos/Julien-cpsn/ATAC",
+            "name": "ATAC"
+          }
+        }
+      }
+    },
+    "public": true,
+    "created_at": "2026-07-18T12:11:42Z"
+  },
+  {
+    "id": "15243876781",
+    "type": "CreateEvent",
+    "actor": {
+      "id": 4688406,
+      "login": "eshad",
+      "display_login": "eshad",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/eshad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
+    },
+    "repo": {
+      "id": 1304877994,
+      "name": "eshad/ATAC",
+      "url": "https://api.github.com/repos/eshad/ATAC"
+    },
+    "payload": {
+      "ref": "feat/query-http-method",
+      "ref_type": "branch",
+      "full_ref": "refs/heads/feat/query-http-method",
+      "master_branch": "main",
+      "description": "A simple API client (postman like) in your terminal",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2026-07-18T12:11:22Z"
+  },
+  {
+    "id": "11966088751",
+    "type": "ForkEvent",
+    "actor": {
+      "id": 4688406,
+      "login": "eshad",
+      "display_login": "eshad",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/eshad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
+    },
+    "repo": {
+      "id": 753274513,
+      "name": "Julien-cpsn/ATAC",
+      "url": "https://api.github.com/repos/Julien-cpsn/ATAC"
+    },
+    "payload": {
+      "action": "forked",
+      "forkee": {
+        "id": 1304877994,
+        "node_id": "R_kgDOTcbbqg",
+        "name": "ATAC",
+        "full_name": "eshad/ATAC",
+        "private": false,
+        "owner": {
+          "login": "eshad",
+          "id": 4688406,
+          "node_id": "MDQ6VXNlcjQ2ODg0MDY=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/4688406?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/eshad",
+          "html_url": "https://github.com/eshad",
+          "followers_url": "https://api.github.com/users/eshad/followers",
+          "following_url": "https://api.github.com/users/eshad/following{/other_user}",
+          "gists_url": "https://api.github.com/users/eshad/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/eshad/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/eshad/subscriptions",
+          "organizations_url": "https://api.github.com/users/eshad/orgs",
+          "repos_url": "https://api.github.com/users/eshad/repos",
+          "events_url": "https://api.github.com/users/eshad/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/eshad/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "html_url": "https://github.com/eshad/ATAC",
+        "description": "A simple API client (postman like) in your terminal",
+        "fork": true,
+        "url": "https://api.github.com/repos/eshad/ATAC",
+        "forks_url": "https://api.github.com/repos/eshad/ATAC/forks",
+        "keys_url": "https://api.github.com/repos/eshad/ATAC/keys{/key_id}",
+        "collaborators_url": "https://api.github.com/repos/eshad/ATAC/collaborators{/collaborator}",
+        "teams_url": "https://api.github.com/repos/eshad/ATAC/teams",
+        "hooks_url": "https://api.github.com/repos/eshad/ATAC/hooks",
+        "issue_events_url": "https://api.github.com/repos/eshad/ATAC/issues/events{/number}",
+        "events_url": "https://api.github.com/repos/eshad/ATAC/events",
+        "assignees_url": "https://api.github.com/repos/eshad/ATAC/assignees{/user}",
+        "branches_url": "https://api.github.com/repos/eshad/ATAC/branches{/branch}",
+        "tags_url": "https://api.github.com/repos/eshad/ATAC/tags",
+        "blobs_url": "https://api.github.com/repos/eshad/ATAC/git/blobs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/eshad/ATAC/git/tags{/sha}",
+        "git_refs_url": "https://api.github.com/repos/eshad/ATAC/git/refs{/sha}",
+        "trees_url": "https://api.github.com/repos/eshad/ATAC/git/trees{/sha}",
+        "statuses_url": "https://api.github.com/repos/eshad/ATAC/statuses/{sha}",
+        "languages_url": "https://api.github.com/repos/eshad/ATAC/languages",
+        "stargazers_url": "https://api.github.com/repos/eshad/ATAC/stargazers",
+        "contributors_url": "https://api.github.com/repos/eshad/ATAC/contributors",
+        "subscribers_url": "https://api.github.com/repos/eshad/ATAC/subscribers",
+        "subscription_url": "https://api.github.com/repos/eshad/ATAC/subscription",
+        "commits_url": "https://api.github.com/repos/eshad/ATAC/commits{/sha}",
+        "git_commits_url": "https://api.github.com/repos/eshad/ATAC/git/commits{/sha}",
+        "comments_url": "https://api.github.com/repos/eshad/ATAC/comments{/number}",
+        "issue_comment_url": "https://api.github.com/repos/eshad/ATAC/issues/comments{/number}",
+        "contents_url": "https://api.github.com/repos/eshad/ATAC/contents/{+path}",
+        "compare_url": "https://api.github.com/repos/eshad/ATAC/compare/{base}...{head}",
+        "merges_url": "https://api.github.com/repos/eshad/ATAC/merges",
+        "archive_url": "https://api.github.com/repos/eshad/ATAC/{archive_format}{/ref}",
+        "downloads_url": "https://api.github.com/repos/eshad/ATAC/downloads",
+        "issues_url": "https://api.github.com/repos/eshad/ATAC/issues{/number}",
+        "pulls_url": "https://api.github.com/repos/eshad/ATAC/pulls{/number}",
+        "milestones_url": "https://api.github.com/repos/eshad/ATAC/milestones{/number}",
+        "notifications_url": "https://api.github.com/repos/eshad/ATAC/notifications{?since,all,participating}",
+        "labels_url": "https://api.github.com/repos/eshad/ATAC/labels{/name}",
+        "releases_url": "https://api.github.com/repos/eshad/ATAC/releases{/id}",
+        "deployments_url": "https://api.github.com/repos/eshad/ATAC/deployments",
+        "created_at": "2026-07-18T12:11:09Z",
+        "updated_at": "2026-07-18T12:11:09Z",
+        "pushed_at": "2026-07-18T12:11:21Z",
+        "git_url": "git://github.com/eshad/ATAC.git",
+        "ssh_url": "git@github.com:eshad/ATAC.git",
+        "clone_url": "https://github.com/eshad/ATAC.git",
+        "svn_url": "https://github.com/eshad/ATAC",
+        "homepage": "https://atac.julien-cpsn.com/",
+        "size": 36781,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "language": null,
+        "has_issues": false,
+        "has_projects": true,
+        "has_downloads": true,
+        "has_wiki": true,
+        "has_pages": false,
+        "has_discussions": false,
+        "forks_count": 0,
+        "mirror_url": null,
+        "archived": false,
+        "disabled": false,
+        "open_issues_count": 0,
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT",
+          "url": "https://api.github.com/licenses/mit",
+          "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "allow_forking": true,
+        "is_template": false,
+        "web_commit_signoff_required": false,
+        "has_pull_requests": true,
+        "pull_request_creation_policy": "all",
+        "topics": [
+
+        ],
+        "visibility": "public",
+        "forks": 0,
+        "open_issues": 0,
+        "watchers": 0,
+        "default_branch": "main"
+      }
+    },
+    "public": true,
+    "created_at": "2026-07-18T12:11:09Z"
+  },
+  {
     "id": "11738052160",
     "type": "ForkEvent",
     "actor": {
