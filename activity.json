@@ -528,8 +528,8 @@
     },
     "repo": {
       "id": 826515105,
-      "name": "CodebuffAI/codebuff",
-      "url": "https://api.github.com/repos/CodebuffAI/codebuff"
+      "name": "CodebuffAI/freebuff",
+      "url": "https://api.github.com/repos/CodebuffAI/freebuff"
     },
     "payload": {
       "action": "forked",
