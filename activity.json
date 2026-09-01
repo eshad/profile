@@ -12,8 +12,8 @@
     },
     "repo": {
       "id": 1201476594,
-      "name": "santifer/career-ops",
-      "url": "https://api.github.com/repos/santifer/career-ops"
+      "name": "career-ops-hq/career-ops",
+      "url": "https://api.github.com/repos/career-ops-hq/career-ops"
     },
     "payload": {
       "action": "forked",
@@ -85,7 +85,7 @@
         "releases_url": "https://api.github.com/repos/eshad/career-ops/releases{/id}",
         "deployments_url": "https://api.github.com/repos/eshad/career-ops/deployments",
         "created_at": "2026-08-28T17:05:07Z",
-        "updated_at": "2026-08-28T17:05:07Z",
+        "updated_at": "2026-09-01T09:40:15Z",
         "pushed_at": "2026-08-28T16:40:46Z",
         "git_url": "git://github.com/eshad/career-ops.git",
         "ssh_url": "git@github.com:eshad/career-ops.git",
@@ -130,7 +130,14 @@
       }
     },
     "public": true,
-    "created_at": "2026-08-28T17:05:07Z"
+    "created_at": "2026-08-28T17:05:07Z",
+    "org": {
+      "id": 323287742,
+      "login": "career-ops-hq",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/career-ops-hq",
+      "avatar_url": "https://avatars.githubusercontent.com/u/323287742?"
+    }
   },
   {
     "id": "13985459626",
