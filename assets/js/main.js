@@ -171,11 +171,11 @@ themeButton.addEventListener("click", () => {
 /*=============== TYPING ANIMATION ===============*/
 const typingText = document.getElementById('typing-text');
 const phrases = [
-  'Project Management Specialist',
-  'Sr. Software Engineer',
-  'Team Lead with Full Stack skill set',
-  'IoT / Embedded System Expert',
-  'Cloud & DevOps Engineer'
+  'Senior Tech Lead',
+  'AI Engineer',
+  'Forward Deployed Engineer',
+  'Airport Security Systems Lead',
+  'LLM Fine-Tuning (LoRA / QLoRA)'
 ];
 
 let phraseIndex = 0;
