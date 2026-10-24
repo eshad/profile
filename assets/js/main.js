@@ -175,7 +175,7 @@ const phrases = [
   'AI Engineer',
   'Forward Deployed Engineer',
   'Airport Security Systems Lead',
-  'LLM Fine-Tuning (LoRA / QLoRA)'
+  'Custom Model Training'
 ];
 
 let phraseIndex = 0;
