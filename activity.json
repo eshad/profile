@@ -164,7 +164,7 @@
             "state": "uploaded",
             "size": 2761165,
             "digest": "sha256:6ae182172cc8c1a348dbf52caf08c190679388956f5fbb11a1184e4c3ad54a58",
-            "download_count": 1,
+            "download_count": 2,
             "created_at": "2026-10-28T03:59:12Z",
             "updated_at": "2026-10-28T03:59:13Z",
             "browser_download_url": "https://github.com/eshad/macscp/releases/download/v1.1.1/MacSCP.dmg"
