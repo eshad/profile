@@ -730,31 +730,5 @@
     },
     "public": true,
     "created_at": "2026-10-24T05:00:11Z"
-  },
-  {
-    "id": "24992284145",
-    "type": "PushEvent",
-    "actor": {
-      "id": 4688406,
-      "login": "eshad",
-      "display_login": "eshad",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/eshad",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4688406?"
-    },
-    "repo": {
-      "id": 535252260,
-      "name": "eshad/eshad",
-      "url": "https://api.github.com/repos/eshad/eshad"
-    },
-    "payload": {
-      "repository_id": 535252260,
-      "push_id": 47598058863,
-      "ref": "refs/heads/main",
-      "head": "bc933f94952e07c744600bff0282b9d3f2d444c6",
-      "before": "84113f1f7f91ea5eadb116c742864944374b6ca5"
-    },
-    "public": true,
-    "created_at": "2026-10-24T05:00:08Z"
   }
 ]
